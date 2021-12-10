@@ -1,0 +1,30 @@
+.Search .pokeball-icon {
+  width: 200px;
+  opacity: 0.5;
+}
+.Search form {
+  height: 8.5vh;
+  margin: 2vh 0;
+  width: 32vw;
+}
+.Search .search-input {
+  padding: 2vh;
+  margin-right: 5px;
+  width: 100%;
+  text-align: center;
+}
+.Search input.btn {
+  border: solid 1px rgba(125, 125, 125, 0.4);
+  padding: 2vh 2vw;
+  background-color: var(--poke-blue);
+  color: white;
+}
+.Search .input-icons i {
+  position: absolute;
+}
+.Search .fas {
+  font-size: 2vw;
+  padding-top: 2vh;
+  padding-left: 20px;
+  color: var(--primary-grey);
+}

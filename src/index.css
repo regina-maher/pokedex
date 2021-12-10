@@ -1,0 +1,31 @@
+:root {
+  --primary-green: #48d0b0;
+  --light-green: #5edfc6;
+  --primary-red: #fc6c6d;
+  --light-red: #fd7f7e;
+  --primary-yellow: #ffd86f;
+  --light-yellow: #f0d185;
+  --primary-blue: #6fb6f7;
+  --light-blue: #87cafd;
+  --poke-yellow: #feca2d;
+  --poke-blue: #435d85;
+  --main-text: "Readex Pro", sans-serif;
+  --light-grey: #f3f3f4;
+  --primary-grey: #c7c7c7;
+}
+@font-face {
+  font-family: "pokemonDigital";
+  src: url("/src/fonts/pokemon-font.woff") format("woff");
+  font-style: normal;
+  font-weight: 200px;
+}
+@font-face {
+  font-family: "pokemonSolid";
+  src: url("/src/fonts/Pokemon\ Solid.woff") format("woff");
+  font-style: normal;
+  font-weight: 200px;
+}
+
+body {
+  font-family: var(--main-text);
+}
