@@ -7,11 +7,15 @@
   --light-yellow: #f0d185;
   --primary-blue: #6fb6f7;
   --light-blue: #87cafd;
+  --primary-purple: #aa66ca;
+  --light-purple: #c28dd8;
+  --primary-normal: #a8a878;
   --poke-yellow: #feca2d;
   --poke-blue: #435d85;
   --main-text: "Readex Pro", sans-serif;
   --light-grey: #f3f3f4;
   --primary-grey: #c7c7c7;
+  --box-shadow: 0 0 8px rgba(125, 125, 125, 0.5);
 }
 @font-face {
   font-family: "pokemonDigital";

@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
 import Pokeball from "../images/pokeball.jpg";
+import PokemonFindings from "./PokemonFindings";
 
 export default function Search() {
   const [loaded, setLoading] = useState(false);
-  const [results, setResults] = useState(null);
+  const [results, setResults] = useState("");
   const [keyword, setKeyword] = useState("");
   function load() {
     setLoading(true);
   }
   function search() {
-    let apiUrl = ` https://pokeapi.co/api/v2/${keyword}`;
+    let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleResponse(response) {
-    setResults(response.data[0]);
-    console.log(results);
+    setResults(response);
   }
   function updateWord(response) {
     setKeyword(response.target.value);
@@ -49,6 +49,7 @@ export default function Search() {
               />
             </form>
           </div>
+          <PokemonFindings results={results} />
         </div>
       </div>
     );

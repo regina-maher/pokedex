@@ -1,11 +1,11 @@
 .Search .pokeball-icon {
-  width: 200px;
-  opacity: 0.5;
+  width: 15vw;
+  opacity: 0.3;
 }
 .Search form {
   height: 8.5vh;
   margin: 2vh 0;
-  width: 32vw;
+  width: 440px;
 }
 .Search .search-input {
   padding: 2vh;
@@ -24,7 +24,7 @@
 }
 .Search .fas {
   font-size: 2vw;
-  padding-top: 2vh;
+  padding-top: 2.5vh;
   padding-left: 20px;
   color: var(--primary-grey);
 }
