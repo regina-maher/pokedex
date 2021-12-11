@@ -3,12 +3,14 @@
   opacity: 0.1;
   position: absolute;
   z-index: -1;
-  left: 300px;
+  left: 660px;
 }
 .Search form {
   height: 8.5vh;
   margin: 2vh 0;
   width: 440px;
+  position: relative;
+  z-index: 5;
 }
 .Search .search-input {
   padding: 2vh;

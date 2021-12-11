@@ -4,10 +4,7 @@
   padding: 20px;
   margin: 2vh auto;
   box-shadow: var(--box-shadow);
-  color: var(--light-grey);
-  background-color: var(--poke-blue);
-  z-index: -3;
-  position: relative;
+  color: var(--text-colour);
 }
 .App .title {
   font-family: pokemonSolid;
