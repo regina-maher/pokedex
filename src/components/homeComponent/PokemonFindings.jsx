@@ -8,7 +8,6 @@ import StatSummary from "./StatSummary";
 export default function PokemonFindings(props) {
   if (props.results) {
     const [...types] = props.results.data.types;
-    console.log(props.results.data);
     return (
       <div className="PokemonFindings" id={types[0].type.name}>
         <div className="row">
