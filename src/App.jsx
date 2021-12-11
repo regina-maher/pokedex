@@ -1,11 +1,13 @@
-// import { useState } from "react";
 import "./App.css";
-import Search from "./components/Search";
+import Home from "./components/homeComponent/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }

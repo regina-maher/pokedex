@@ -1,0 +1,8 @@
+.PokePictures {
+  position: relative;
+  bottom: 25vh;
+  left: 2.5vw;
+}
+.PokePictures .pokemon {
+  height: 30vh;
+}

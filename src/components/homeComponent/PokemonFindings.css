@@ -5,10 +5,11 @@
   border-radius: 6px;
   position: relative;
   z-index: -2;
+  height: 300px;
 }
 .PokemonFindings .pokeball {
   position: relative;
-  left: 9.5vw;
+  left: 4.5vw;
   bottom: 1vw;
   z-index: -1;
   width: 140px;
@@ -17,15 +18,32 @@
 .PokemonFindings .subheading {
   font-size: 3vw;
   text-transform: capitalize;
-  opacity: 0.7;
+  color: var(--light-grey);
 }
 .PokemonFindings .poke-details {
   justify-content: space-evenly;
+  position: relative;
+  bottom: 20vh;
 }
 .PokemonFindings .poke-type {
   border-radius: 4px;
   border: 1px solid var(--light-grey);
   margin: 20px;
-  padding: 10px 30px;
+  padding: 5px 15px;
   color: white;
+}
+.StatSummary,
+.AbilitiesSummary {
+  color: white;
+  opacity: 0.9;
+  padding-top: 3vh;
+}
+.PokemonFindings .small-subheading {
+  font-size: 1.5vw;
+}
+.PokemonFindings ul {
+  list-style: none;
+  font-size: 1.2vw;
+  font-weight: 300;
+  padding-left: 0px;
 }

@@ -1,21 +1,34 @@
 :root {
   --primary-green: #48d0b0;
-  --light-green: #5edfc6;
   --primary-red: #fc6c6d;
-  --light-red: #fd7f7e;
   --primary-yellow: #ffd86f;
-  --light-yellow: #f0d185;
   --primary-blue: #6fb6f7;
-  --light-blue: #87cafd;
   --primary-purple: #aa66ca;
-  --light-purple: #c28dd8;
-  --primary-normal: #a8a878;
   --poke-yellow: #feca2d;
   --poke-blue: #435d85;
   --main-text: "Readex Pro", sans-serif;
   --light-grey: #f3f3f4;
   --primary-grey: #c7c7c7;
+  --text-colour: #606470;
   --box-shadow: 0 0 8px rgba(125, 125, 125, 0.5);
+  --normal: #a8a77a;
+  --fire: #ee8130;
+  --water: #6390f0;
+  --electric: #f7d02c;
+  --grass: #7ac74c;
+  --ice: #96d9d6;
+  --fighting: #c22e28;
+  --poison: #a33ea1;
+  --ground: #e2bf65;
+  --flying: #a98ff3;
+  --psychic: #f95587;
+  --bug: #a6b91a;
+  --rock: #b6a136;
+  --ghost: #735797;
+  --dragon: #6f35fc;
+  --dark: #705746;
+  --steel: #b7b7ce;
+  --fairy: #d685ad;
 }
 @font-face {
   font-family: "pokemonDigital";

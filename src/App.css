@@ -4,6 +4,10 @@
   padding: 20px;
   margin: 2vh auto;
   box-shadow: var(--box-shadow);
+  color: var(--light-grey);
+  background-color: var(--poke-blue);
+  z-index: -3;
+  position: relative;
 }
 .App .title {
   font-family: pokemonSolid;
@@ -15,8 +19,21 @@
   font-size: 6vw;
 }
 .App .heading {
-  padding: 30px 5px;
-  font-size: 2.2vw;
+  padding: 25px 5px;
+  font-size: 2.5vw;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .rotate {
+    animation: 8s infinite spin;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 #grass {
   background-color: var(--primary-green);
@@ -27,15 +44,48 @@
 #water {
   background-color: var(--primary-blue);
 }
-#air {
-  background-color: var(--primary-blue);
+#flying {
+  background-color: var(--flying);
 }
 #electric {
-  background-color: var(--primary-yellow);
+  background-color: var(--electric);
 }
 #poison {
-  background-color: var(--primary-purple);
+  background-color: var(--poison);
 }
 #normal {
-  background-color: var(--primary-normal);
+  background-color: var(--normal);
+}
+#ice {
+  background-color: var(--ice);
+}
+#fighting {
+  background-color: var(--fighting);
+}
+#ground {
+  background-color: var(--ground);
+}
+#psychic {
+  background-color: var(--psychic);
+}
+#bug {
+  background-color: var(--bug);
+}
+#rock {
+  background-color: var(--rock);
+}
+#ghost {
+  background-color: var(--ghost);
+}
+#dragon {
+  background-color: var(--dragon);
+}
+#dark {
+  background-color: var(--dark);
+}
+#steel {
+  background-color: var(--steel);
+}
+#fairy {
+  background-color: var(--fairy);
 }

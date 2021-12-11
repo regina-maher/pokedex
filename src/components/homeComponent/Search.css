@@ -1,6 +1,9 @@
 .Search .pokeball-icon {
   width: 15vw;
-  opacity: 0.3;
+  opacity: 0.1;
+  position: absolute;
+  z-index: -1;
+  left: 300px;
 }
 .Search form {
   height: 8.5vh;
