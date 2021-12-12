@@ -1,0 +1,16 @@
+.DefaultPokeDisplay img.poke-default {
+  height: 50px;
+}
+.DefaultPokeDisplay .tab {
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  color: var(--light-grey);
+  border-radius: 4px;
+  margin-top: 25px;
+}
+.DefaultPokeDisplay ul {
+  list-style: none;
+}
+.DefaultPokeDisplay li {
+  font-size: 1.2vw;
+}

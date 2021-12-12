@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./DefaultPokeDisplay.css";
 
 export default function DefaultPokeDisplay() {
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
   const pokeApiArray = [];
+  const pokeTypes = [];
   const [pokeDataArray, setPokeDataArray] = useState([]);
   let pikachuData, bulbasaurData, charmanderData, squirtleData;
 
@@ -24,16 +26,11 @@ export default function DefaultPokeDisplay() {
           bulbasaurData = allData[1].data;
           charmanderData = allData[2].data;
           squirtleData = allData[3].data;
-          organiseData(
-            pikachuData,
-            bulbasaurData,
-            charmanderData,
-            squirtleData
-          );
+          spreadTypes(pikachuData, bulbasaurData, charmanderData, squirtleData);
         })
       );
   }
-  function organiseData(
+  function spreadTypes(
     pikachuData,
     bulbasaurData,
     charmanderData,
@@ -43,25 +40,52 @@ export default function DefaultPokeDisplay() {
     const [...bulbasaurTypes] = bulbasaurData.types;
     const [...charmanderTypes] = charmanderData.types;
     const [...squirtleTypes] = squirtleData.types;
+    for (const [key, { ...pika }] of Object.entries(pikachuTypes)) {
+      pokeTypes.push({ pikachu: pika.type.name });
+    }
+    for (const [key, { ...bulb }] of Object.entries(bulbasaurTypes)) {
+      pokeTypes.push({ bulbasaur: bulb.type.name });
+    }
+    for (const [key, { ...char }] of Object.entries(charmanderTypes)) {
+      pokeTypes.push({ charmander: char.type.name });
+    }
+    for (const [key, { ...squirt }] of Object.entries(squirtleTypes)) {
+      pokeTypes.push({ squirtle: squirt.type.name });
+    }
+    organiseData(
+      pikachuData,
+      bulbasaurData,
+      charmanderData,
+      squirtleData,
+      pokeTypes
+    );
+  }
+  function organiseData(
+    pikachuData,
+    bulbasaurData,
+    charmanderData,
+    squirtleData,
+    pokeTypes
+  ) {
     setPokeDataArray([
       {
         name: pikachuData.species.name,
-        types: pikachuTypes,
+        types: [pokeTypes[0].pikachu],
         img: pikachuData.sprites.other.dream_world.front_default,
       },
       {
         name: bulbasaurData.species.name,
-        types: bulbasaurTypes,
+        types: [pokeTypes[1].bulbasaur, pokeTypes[2].bulbasaur],
         img: bulbasaurData.sprites.other.dream_world.front_default,
       },
       {
         name: charmanderData.species.name,
-        types: charmanderTypes,
+        types: [pokeTypes[3].charmander],
         img: charmanderData.sprites.other.dream_world.front_default,
       },
       {
         name: squirtleData.species.name,
-        types: squirtleTypes,
+        types: [pokeTypes[4].squirtle],
         img: squirtleData.sprites.other.dream_world.front_default,
       },
     ]);
@@ -69,12 +93,33 @@ export default function DefaultPokeDisplay() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(pokeDataArray);
   return (
     <div className="DefaultPokeDisplay">
-      <div className="row">
-        <div className="col-6"></div>
+      <div className="row pt-3">
+        {pokeDataArray.map((poke, index) => {
+          return (
+            <div key={index} className="col-6">
+              <div
+                id={poke.types.length >= 1 ? poke.types[0] : poke.types}
+                className="d-flex tab justify-content-between"
+              >
+                <div className="body">
+                  <h5 className="subheading">{poke.name}</h5>
+                  <ul>
+                    <li>
+                      {poke.types.length >= 1 ? poke.types[0] : poke.types}
+                    </li>
+                  </ul>
+                </div>
+                <img
+                  src={poke.img}
+                  alt={poke.name}
+                  className="img-fluid poke-default"
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

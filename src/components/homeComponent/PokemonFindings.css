@@ -4,7 +4,7 @@
   margin-top: 40px;
   border-radius: 6px;
   position: relative;
-  z-index: -2;
+  z-index: 1;
   height: 300px;
 }
 .PokemonFindings .pokeball {

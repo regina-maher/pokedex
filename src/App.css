@@ -1,7 +1,6 @@
 .App {
   width: 500px;
   border-radius: 6px;
-  padding: 20px;
   margin: 2vh auto;
   box-shadow: var(--box-shadow);
   color: var(--text-colour);
