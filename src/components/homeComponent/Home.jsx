@@ -3,12 +3,16 @@ import Search from "./Search";
 import DefaultPokeDisplay from "./DefaultPokeDisplay";
 import "./Home.css";
 
-export default function Home() {
+export default function Home(props) {
   const [searched, setSearched] = useState(false);
 
   return (
     <div className="Home">
-      <Search setSearched={setSearched} />
+      <Search
+        setSearched={setSearched}
+        results={props.results}
+        setResults={props.setResults}
+      />
       <DefaultPokeDisplay searched={searched} />
     </div>
   );

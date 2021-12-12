@@ -7,14 +7,13 @@ import axios from "axios";
 export default function Search(props) {
   const [loaded, setLoading] = useState(false);
   const [keyword, setKeyword] = useState("");
-  const [results, setResults] = useState("");
   function search() {
     let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
     props.setSearched(true);
   }
   function handleResponse(response) {
-    setResults(response);
+    props.setResults(response);
   }
   function load() {
     setLoading(true);
@@ -27,7 +26,7 @@ export default function Search(props) {
     search();
   }
   function resetHome() {
-    setResults("");
+    props.setResults("");
     props.setSearched(false);
   }
   if (loaded) {
@@ -57,7 +56,7 @@ export default function Search(props) {
               />
             </form>
           </div>
-          <PokemonFindings results={results} />
+          <PokemonFindings results={props.results} />
         </div>
       </div>
     );
