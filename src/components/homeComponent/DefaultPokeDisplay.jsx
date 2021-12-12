@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DefaultPokeDisplay.css";
 
-export default function DefaultPokeDisplay() {
+export default function DefaultPokeDisplay(props) {
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
   const pokeApiArray = [];
   const pokeTypes = [];
@@ -93,34 +93,38 @@ export default function DefaultPokeDisplay() {
   useEffect(() => {
     fetchData();
   }, []);
-  return (
-    <div className="DefaultPokeDisplay">
-      <div className="row pt-3">
-        {pokeDataArray.map((poke, index) => {
-          return (
-            <div key={index} className="col-6">
-              <div
-                id={poke.types.length >= 1 ? poke.types[0] : poke.types}
-                className="d-flex tab justify-content-between"
-              >
-                <div className="body">
-                  <h5 className="subheading">{poke.name}</h5>
-                  <ul>
-                    <li>
-                      {poke.types.length >= 1 ? poke.types[0] : poke.types}
-                    </li>
-                  </ul>
+  if (!props.searched) {
+    return (
+      <div className="DefaultPokeDisplay">
+        <div className="row pt-3">
+          {pokeDataArray.map((poke, index) => {
+            return (
+              <div key={index} className="col-6">
+                <div
+                  id={poke.types.length >= 1 ? poke.types[0] : poke.types}
+                  className="d-flex tab justify-content-between"
+                >
+                  <div className="body">
+                    <h5 className="subheading">{poke.name}</h5>
+                    <ul>
+                      <li>
+                        {poke.types.length >= 1 ? poke.types[0] : poke.types}
+                      </li>
+                    </ul>
+                  </div>
+                  <img
+                    src={poke.img}
+                    alt={poke.name}
+                    className="img-fluid poke-default"
+                  />
                 </div>
-                <img
-                  src={poke.img}
-                  alt={poke.name}
-                  className="img-fluid poke-default"
-                />
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return null;
+  }
 }
