@@ -26,10 +26,17 @@ export default function Search(props) {
     event.preventDefault();
     search();
   }
+  function resetHome() {
+    setResults("");
+    props.setSearched(false);
+  }
   if (loaded) {
     return (
       <div className="Search">
         <div className="container-fluid">
+          <button onClick={resetHome}>
+            <i class="fas fa-home" />
+          </button>
           <div className="d-flex justify-content-between">
             <h1 className="heading">What Pokemon are you looking for?</h1>
             <img

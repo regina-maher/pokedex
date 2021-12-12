@@ -5,6 +5,14 @@
   z-index: 2;
   left: 660px;
 }
+.Search .fa-home {
+  opacity: 0.2;
+  font-size: 1.5vw;
+}
+.Search button {
+  border: none;
+  background: none;
+}
 .Search form {
   height: 8.5vh;
   margin: 2vh 0;
@@ -27,7 +35,7 @@
 .Search .input-icons i {
   position: absolute;
 }
-.Search .fas {
+.Search .fa-search {
   font-size: 2vw;
   padding-top: 2.5vh;
   padding-left: 20px;
