@@ -1,9 +1,10 @@
 .Search .pokeball-icon {
-  width: 15vw;
+  width: 20vw;
   opacity: 0.1;
   position: absolute;
   z-index: 2;
-  left: 660px;
+  left: 630px;
+  top: 15px;
 }
 .Search .fa-home {
   opacity: 0.2;

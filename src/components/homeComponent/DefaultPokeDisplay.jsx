@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DefaultPokeDisplay.css";
+import pokeball from "../../images/pokeball.jpg";
 
 export default function DefaultPokeDisplay(props) {
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
@@ -102,7 +103,7 @@ export default function DefaultPokeDisplay(props) {
               <div key={index} className="col-6">
                 <div
                   id={poke.types.length >= 1 ? poke.types[0] : poke.types}
-                  className="d-flex tab justify-content-between"
+                  className="d-flex tab justify-content-evenly"
                 >
                   <div className="body">
                     <h5 className="subheading">{poke.name}</h5>
@@ -116,6 +117,11 @@ export default function DefaultPokeDisplay(props) {
                     src={poke.img}
                     alt={poke.name}
                     className="img-fluid poke-default"
+                  />
+                  <img
+                    src={pokeball}
+                    alt="pokeball icon"
+                    className="img-fluid pokeball rotate"
                   />
                 </div>
               </div>

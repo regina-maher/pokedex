@@ -34,7 +34,7 @@ export default function Search(props) {
       <div className="Search">
         <div className="container-fluid">
           <button onClick={resetHome}>
-            <i class="fas fa-home" />
+            <i className="fas fa-home" />
           </button>
           <div className="d-flex justify-content-between">
             <h1 className="heading">What Pokemon are you looking for?</h1>

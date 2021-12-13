@@ -1,4 +1,5 @@
 import React from "react";
+import "./StatSummary.css";
 
 export default function StatSummary(props) {
   if (props.results) {
@@ -8,20 +9,20 @@ export default function StatSummary(props) {
 
     return (
       <div className="StatSummary">
-        <h3 className="small-subheading">Stats</h3>
-        <div className="row">
+        {/* <h3 className="small-subheading">Stats</h3> */}
+        <div className="row pe-3">
           <div className="col-6">
             <ul>
-              <li>weight:</li>
-              <li>height:</li>
-              <li>moves:</li>
+              <li className="unit">weight:</li>
+              <li className="unit">height:</li>
+              <li className="unit">moves:</li>
             </ul>
           </div>
           <div className="col-6">
             <ul>
-              <li>{weight}</li>
-              <li>{height}</li>
-              <li>{moves.length}</li>
+              <li className="value">{weight}</li>
+              <li className="value">{height}</li>
+              <li className="value">{moves.length}</li>
             </ul>
           </div>
         </div>

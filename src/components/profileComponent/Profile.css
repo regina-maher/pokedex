@@ -1,0 +1,46 @@
+.Profile {
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+  color: var(--light-grey);
+}
+.Profile section.intro-banner {
+  padding: 20px;
+}
+.Profile section .type-summary {
+  height: 38vh;
+}
+.Profile a.home-link {
+  color: var(--light-grey);
+}
+.Profile .subheading {
+  padding: 30px 10px;
+  text-transform: capitalize;
+}
+.Profile ul {
+  list-style: none;
+  padding: 0;
+}
+.Profile .listed-ability {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 7px 20px;
+  text-align: center;
+  font-size: 1.3vw;
+  border-radius: 30px;
+  margin-right: 5px;
+  font-weight: 300;
+}
+.Profile img.pokeball {
+  opacity: 0.1;
+  position: relative;
+  top: -210px;
+}
+.Profile img.pokemon {
+  position: relative;
+  z-index: 1;
+}
+.Profile section.poke-stats {
+  background: var(--light-grey);
+  color: var(--text-colour);
+  padding: 10px;
+  border-radius: 30px 30px 6px 6px;
+}

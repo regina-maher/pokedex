@@ -15,6 +15,7 @@
   width: 140px;
   opacity: 0.2;
 }
+
 .PokemonFindings .subheading {
   font-size: 3vw;
   text-transform: capitalize;
@@ -26,10 +27,12 @@
   bottom: 20vh;
 }
 .PokemonFindings .poke-type {
-  border-radius: 4px;
-  border: 1px solid var(--light-grey);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   margin: 20px;
-  padding: 5px 15px;
+  padding: 8px 20px;
+  font-weight: 300;
+  font-size: 1.3vw;
   color: white;
 }
 .StatSummary,
@@ -46,4 +49,13 @@
   font-size: 1.2vw;
   font-weight: 300;
   padding-left: 0px;
+}
+.PokemonFindings button.btn {
+  border-bottom: var(--light-grey) 1px solid;
+  border-radius: 0;
+  padding: 5px 0;
+  color: white;
+  font-size: 1vw;
+  font-weight: 200;
+  width: 65px;
 }

@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./components/homeComponent/Home";
+import Profile from "./components/profileComponent/Profile";
 import { Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 
@@ -13,6 +14,11 @@ function App() {
           exact
           path="/"
           element={<Home results={results} setResults={setResults} />}
+        />
+        <Route
+          exact
+          path="Profile"
+          element={<Profile results={results.data} />}
         />
       </Routes>
     </div>
