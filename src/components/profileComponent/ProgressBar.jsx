@@ -11,7 +11,7 @@ const ProgressBar = (props) => {
   return (
     <div className="ProgressBar">
       <div className="container-fluid bar-background">
-        <div style={fillerStyles} className="bar"></div>
+        <div style={fillerStyles} className="bar fade-in"></div>
       </div>
     </div>
   );

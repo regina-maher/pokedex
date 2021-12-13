@@ -9,7 +9,23 @@
 .ProgressBar .bar {
   height: 100%;
   border-radius: inherit;
-  background-color: var(--poke-blue);
+  background-color: var(--text-colour);
   text-align: right;
   margin-right: 5;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation-duration: 3s;
+    animation-name: fade;
+    animation-direction: alternate;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.9;
+  }
 }
