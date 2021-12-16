@@ -5,7 +5,7 @@
   border-radius: 6px;
   position: relative;
   z-index: 1;
-  height: 300px;
+  height: 330px;
 }
 .PokemonFindings .pokeball {
   position: relative;
@@ -24,7 +24,7 @@
 .PokemonFindings .poke-details {
   justify-content: space-evenly;
   position: relative;
-  bottom: 20vh;
+  bottom: 15vh;
 }
 .PokemonFindings .poke-type {
   border-radius: 30px;
@@ -35,6 +35,7 @@
   font-size: 1.3vw;
   color: white;
 }
+
 .StatSummary,
 .AbilitiesSummary {
   color: white;
@@ -56,6 +57,7 @@
   padding: 5px 0;
   color: white;
   font-size: 1vw;
-  font-weight: 200;
-  width: 65px;
+  font-weight: 700;
+  width: 85px;
+  text-transform: uppercase;
 }

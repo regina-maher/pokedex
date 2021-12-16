@@ -13,14 +13,12 @@ export default function PokemonFindings(props) {
       <div className="PokemonFindings" id={types[0].type.name}>
         <div className="row">
           <div className="col-6">
-            <div className="d-flex justify-content-between">
-              <h2 className="subheading pe-4">
-                {props.results.data.forms[0].name}
-              </h2>
-              <Link to="../profile">
-                <button className="btn pt-3">explore >></button>
-              </Link>
-            </div>
+            <h2 className="subheading pe-4">
+              {props.results.data.forms[0].name}
+            </h2>
+            <Link to="../profile">
+              <button className="btn explore pt-3">explore >></button>
+            </Link>
             <div className="d-flex justify-content-evenly">
               <StatSummary results={props.results} />
               <AbilitiesSummary results={props.results} />

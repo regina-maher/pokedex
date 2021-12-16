@@ -3,11 +3,11 @@
   opacity: 0.1;
   position: absolute;
   z-index: 2;
-  left: 630px;
+  left: 620px;
   top: 15px;
 }
 .Search .fa-home {
-  opacity: 0.2;
+  opacity: 0.5;
   font-size: 1.5vw;
 }
 .Search button {

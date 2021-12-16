@@ -5,7 +5,7 @@ const ProgressBar = (props) => {
   const { completed } = props;
 
   const fillerStyles = {
-    width: `${completed}%`,
+    width: `${completed / 1.5}%`,
   };
 
   return (

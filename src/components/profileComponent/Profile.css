@@ -7,10 +7,12 @@
   padding: 20px;
 }
 .Profile section .type-summary {
-  height: 38vh;
+  height: 33vh;
 }
 .Profile a.home-link {
   color: var(--light-grey);
+  z-index: 5;
+  position: relative;
 }
 .Profile .subheading {
   padding: 30px 10px;
@@ -31,16 +33,22 @@
 }
 .Profile img.pokeball {
   opacity: 0.1;
-  position: relative;
-  top: -210px;
+  position: absolute;
+  top: 20px;
+  right: 400px;
+  width: 280px;
 }
 .Profile img.pokemon {
   position: relative;
   z-index: 1;
+  height: 200px;
+  left: 20px;
 }
 .Profile section.poke-stats {
   background: var(--light-grey);
   color: var(--text-colour);
   padding: 10px;
   border-radius: 30px 30px 6px 6px;
+  position: relative;
+  z-index: 2;
 }

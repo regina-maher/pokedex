@@ -5,7 +5,7 @@ import pokeball from "../../images/pokeball.jpg";
 import StatSections from "./StatSections";
 
 export default function Profile(props) {
-  if (props) {
+  if (props.results !== "") {
     const [...types] = props.results.types;
     const mainType = types[0].type.name;
     console.log(props);

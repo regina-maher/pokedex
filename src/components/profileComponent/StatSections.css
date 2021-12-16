@@ -1,11 +1,11 @@
 .StatSections .stat-heading {
   font-size: 15px;
   padding: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
-.StatSections .active {
-  text-decoration: underline;
-}
-.StatSections .inactive {
-  opacity: 0.3;
+.StatSections .btn {
+  padding: 0;
 }

@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./BaseStats.css";
 import StatBars from "./StatBars";
 
 export default function BaseStats(props) {
   const [...stats] = props.results.stats;
-  // const [skillBarData, setSkillBarData] = useState([]);
-  // let skilkBar = [];
-  // function createBars() {
-  //   for (let i = 0; i < stats.length; i++) {
-  //     skilkBar.push({
-  //       width: `${stats[i].base_stat}%`,
-  //     });
-  //   }
-  //   setSkillBarData(skilkBar);
-  // }
-  // useEffect(() => {
-  //   createBars();
-  // }, []);
+
   return (
     <div className="BaseStats">
       <div className="row">
@@ -40,7 +28,7 @@ export default function BaseStats(props) {
             );
           })}
         </div>
-        <div className="col-2">
+        <div className="col-1">
           <h5 className="stat-heading">impact</h5>
           {stats.map((stat, index) => {
             return (
@@ -50,7 +38,7 @@ export default function BaseStats(props) {
             );
           })}
         </div>
-        <div className="col-5">
+        <div className="col-6">
           <StatBars results={props.results} stats={stats} />
         </div>
       </div>
