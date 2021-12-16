@@ -1,33 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavHeading.css";
 
 function NavHeading(props) {
-  const headings = ["about", "base stats", "evolution", "moves"];
-  let activeArry = [];
-  function updatedHeading(id) {
-    activeArry = props.active;
-    for (let i = 0; i < headings.length; i++) {
-      if (activeArry[i]) {
-        activeArry[i] = false;
-      }
-    }
-    activeArry[id] = true;
-    props.setActive(activeArry);
-    console.log(props.active);
-  }
   return (
     <div className="NavHeading">
       <nav>
         <ul className="nav-list">
-          {headings.map((title, index) => {
+          {props.tabContent.map((tab, index) => {
             return (
-              <button
-                className={props.active[index] ? "active" : "inactive"}
+              <li
                 key={index}
-                onClick={() => updatedHeading(index)}
+                className={tab.id === props.active ? "active" : "inactive"}
               >
-                <li>{title}</li>
-              </button>
+                <button onClick={() => props.setActive(tab.id)}>
+                  {tab.title}
+                </button>
+              </li>
             );
           })}
         </ul>

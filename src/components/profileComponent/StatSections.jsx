@@ -6,15 +6,38 @@ import NavHeading from "./NavHeading";
 
 export default function StatSections(props) {
   const [...stats] = props.results.stats;
-  const [active, setActive] = useState([true, false, false, false]);
-
+  const [activeTab, setActiveTab] = useState(1);
+  const tabContent = [
+    {
+      id: 1,
+      title: "about",
+      content: <About results={props.results} />,
+    },
+    {
+      id: 2,
+      title: "base stats",
+      content: <BaseStats results={props.results} />,
+    },
+    {
+      id: 3,
+      title: "evolution",
+      content: "Third tab Content",
+    },
+    {
+      id: 4,
+      title: "moves",
+      content: "Third tab Content",
+    },
+  ];
   return (
     <div className="StatSections">
       <div className="row mb-3">
-        <NavHeading active={active} setActive={setActive} />
+        <NavHeading
+          tabContent={tabContent}
+          active={activeTab}
+          setActive={setActiveTab}
+        />
       </div>
-      {active[0] ? <About results={props.results} /> : null}
-      {active[1] ? <BaseStats results={props.results} /> : null}
     </div>
   );
 }
