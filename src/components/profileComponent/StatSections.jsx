@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./StatSections.css";
 import BaseStats from "./statComponents/BaseStats";
 import About from "./statComponents/About";
+import Evolution from "./statComponents/Evolution";
 import NavHeading from "./NavHeading";
 
 export default function StatSections(props) {
@@ -21,14 +22,15 @@ export default function StatSections(props) {
     {
       id: 3,
       title: "evolution",
-      content: "Third tab Content",
+      content: <Evolution results={props.results} />,
     },
     {
       id: 4,
       title: "moves",
-      content: "Third tab Content",
+      content: "4th tab meow",
     },
   ];
+  console.log(props.results);
   return (
     <div className="StatSections">
       <div className="row mb-3">
@@ -37,6 +39,7 @@ export default function StatSections(props) {
           active={activeTab}
           setActive={setActiveTab}
         />
+        {tabContent[activeTab - 1].content}
       </div>
     </div>
   );

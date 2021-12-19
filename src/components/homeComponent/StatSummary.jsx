@@ -9,7 +9,6 @@ export default function StatSummary(props) {
 
     return (
       <div className="StatSummary">
-        {/* <h3 className="small-subheading">Stats</h3> */}
         <div className="row pe-3">
           <div className="col-6">
             <ul>

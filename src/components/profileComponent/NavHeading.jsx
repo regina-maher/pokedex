@@ -12,7 +12,10 @@ function NavHeading(props) {
                 key={index}
                 className={tab.id === props.active ? "active" : "inactive"}
               >
-                <button onClick={() => props.setActive(tab.id)}>
+                <button
+                  onClick={() => props.setActive(tab.id)}
+                  className="stat-heading"
+                >
                   {tab.title}
                 </button>
               </li>

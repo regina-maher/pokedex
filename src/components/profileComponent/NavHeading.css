@@ -3,15 +3,14 @@
   padding-left: 0;
   display: inline-flex;
 }
-.NavHeading il.stat-heading {
+.NavHeading .stat-heading {
   justify-content: space-evenly;
-  padding: 5px 20px;
+  padding: 10px 20px;
+  color: var(--text-colour);
 }
-.NavHeading .active {
-  text-decoration: underline;
-}
+
 .NavHeading .inactive {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .NavHeading button {
   border: none;

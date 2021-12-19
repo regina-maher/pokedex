@@ -7,37 +7,53 @@ import axios from "axios";
 export default function Search(props) {
   const [loaded, setLoading] = useState(false);
   const [keyword, setKeyword] = useState("");
-  function search() {
+  const search = () => {
     let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
     props.setSearched(true);
-  }
-  function handleResponse(response) {
+  };
+  const handleResponse = (response) => {
     props.setResults(response);
-  }
-  function load() {
+  };
+  const load = () => {
     setLoading(true);
-  }
-  function updateWord(response) {
+  };
+  const updateWord = (response) => {
     setKeyword(response.target.value);
-  }
-  function handleSubmit(event) {
+  };
+  const handleSubmit = (event) => {
     event.preventDefault();
     search();
-  }
-  function resetHome() {
+  };
+  const resetHome = () => {
     props.setResults("");
     props.setSearched(false);
-  }
+  };
+
   if (loaded) {
     return (
       <div className="Search">
         <div className="container-fluid">
           <button onClick={resetHome}>
-            <i className="fas fa-home" />
+            {/* <i className="fas fa-home" /> */}
+            <i class="fas fa-arrow-left"></i>
           </button>
-          <div className="d-flex justify-content-between">
-            <h1 className="heading">What Pokemon are you looking for?</h1>
+          <div className={props.searched ? "hide" : ""}>
+            <div className="d-flex justify-content-between">
+              <h1 className="title">Pokedex</h1>
+              <img
+                src={Pokeball}
+                className="img-fluid pokeball-icon"
+                alt="silhouette icon of a pokeball"
+              />
+            </div>
+            <h2 className="heading text-center">
+              All your poke-detail needs in one place
+            </h2>
+          </div>
+          <div className={props.searched ? "searched" : "searched hide"}>
+            <h2 className="heading text-center">LOOK!</h2>
+            <h2 className="heading text-center">We found your Pokemon</h2>
             <img
               src={Pokeball}
               className="img-fluid pokeball-icon"
@@ -50,7 +66,7 @@ export default function Search(props) {
               <input
                 type="search"
                 className="form search-input form-control"
-                placeholder="Search a Pokemon..."
+                placeholder="Search for a Pokemon..."
                 autoFocus={true}
                 onChange={updateWord}
               />

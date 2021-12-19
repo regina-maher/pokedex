@@ -9,6 +9,7 @@ export default function Home(props) {
   return (
     <div className="Home">
       <Search
+        searched={searched}
         setSearched={setSearched}
         results={props.results}
         setResults={props.setResults}
