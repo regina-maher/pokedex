@@ -5,6 +5,7 @@ import About from "./statComponents/About";
 import Evolution from "./statComponents/Evolution";
 import NavHeading from "./NavHeading";
 import Items from "./statComponents/Items";
+import Moves from "./statComponents/Moves";
 
 export default function StatSections(props) {
   const [...stats] = props.results.stats;
@@ -33,10 +34,9 @@ export default function StatSections(props) {
     {
       id: 5,
       title: "moves",
-      content: "4th tab meow",
+      content: <Moves results={props.results} />,
     },
   ];
-  console.log(props.results);
   return (
     <div className="StatSections">
       <div className="row mb-3">

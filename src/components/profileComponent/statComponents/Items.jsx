@@ -17,7 +17,6 @@ const Items = (props) => {
             const { data, loading } = useFetch(item.itemHeld);
             if (!loading) {
               const { ...itemData } = data.data;
-              console.log(itemData);
               return (
                 <div className="row" key={index}>
                   <div className="col-3">

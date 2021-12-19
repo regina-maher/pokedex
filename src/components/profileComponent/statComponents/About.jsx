@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./About.css";
-import { useFetch } from "./useFetch";
 
 export default function About(props) {
   const [...ability] = props.results.abilities;

@@ -1,7 +1,8 @@
 import React from "react";
 
-function Evolution() {
+const Evolution = (props) => {
+  console.log(props.results);
   return <div></div>;
-}
+};
 
 export default Evolution;

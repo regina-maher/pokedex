@@ -1,0 +1,8 @@
+.Moves .move {
+  font-size: 10px;
+  font-weight: 300;
+}
+.Moves .move span {
+  padding-left: 7px;
+  font-weight: 400;
+}

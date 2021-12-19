@@ -8,7 +8,6 @@ export default function Profile(props) {
   if (props.results !== "") {
     const [...types] = props.results.types;
     const mainType = types[0].type.name;
-    console.log(props);
     return (
       <div className="Profile" id={mainType}>
         <section className="intro-banner">
