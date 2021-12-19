@@ -11,7 +11,7 @@ const Items = (props) => {
   if (items.length > 0) {
     return (
       <div className="Items">
-        <h5 className="stat-heading pt-4">items held</h5>
+        <h5 className="stat-heading pb-2">items held</h5>
         <div className="row">
           {itemsUrlArr.map((item, index) => {
             const { data, loading } = useFetch(item.itemHeld);
@@ -20,11 +20,11 @@ const Items = (props) => {
               console.log(itemData);
               return (
                 <div className="row" key={index}>
-                  <div className="col-4">
+                  <div className="col-3">
                     <div className="basic-details">{itemData.name}</div>
                     <div className="details">item id: {itemData.id}</div>
                   </div>
-                  <div className="col-8 item-details">
+                  <div className="col-9 item-details">
                     <ul>
                       <li>
                         <strong>category: </strong> {itemData.category.name}

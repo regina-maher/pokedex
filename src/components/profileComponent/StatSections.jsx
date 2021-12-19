@@ -4,6 +4,7 @@ import BaseStats from "./statComponents/BaseStats";
 import About from "./statComponents/About";
 import Evolution from "./statComponents/Evolution";
 import NavHeading from "./NavHeading";
+import Items from "./statComponents/Items";
 
 export default function StatSections(props) {
   const [...stats] = props.results.stats;
@@ -16,16 +17,21 @@ export default function StatSections(props) {
     },
     {
       id: 2,
-      title: "base stats",
+      title: "stats",
       content: <BaseStats results={props.results} />,
     },
     {
       id: 3,
+      title: "items",
+      content: <Items results={props.results} />,
+    },
+    {
+      id: 4,
       title: "evolution",
       content: <Evolution results={props.results} />,
     },
     {
-      id: 4,
+      id: 5,
       title: "moves",
       content: "4th tab meow",
     },

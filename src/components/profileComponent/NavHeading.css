@@ -5,8 +5,7 @@
   height: 15px;
 }
 .NavHeading .stat-heading {
-  justify-content: space-evenly;
-  padding: 10px 20px;
+  padding: 10px 15px;
   color: var(--text-colour);
 }
 

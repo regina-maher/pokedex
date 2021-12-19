@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./About.css";
 import { useFetch } from "./useFetch";
-import Items from "./Items";
 
 export default function About(props) {
   const [...ability] = props.results.abilities;
@@ -51,7 +50,6 @@ export default function About(props) {
           );
         })}
       </div>
-      <Items results={props.results} />
     </div>
   );
 }
