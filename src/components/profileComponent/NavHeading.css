@@ -2,6 +2,7 @@
   text-decoration: none;
   padding-left: 0;
   display: inline-flex;
+  height: 15px;
 }
 .NavHeading .stat-heading {
   justify-content: space-evenly;

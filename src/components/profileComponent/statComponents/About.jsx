@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
+import { useFetch } from "./useFetch";
+import Items from "./Items";
 
 export default function About(props) {
   const [...ability] = props.results.abilities;
@@ -7,6 +9,7 @@ export default function About(props) {
   for (const [key, { ...name }] of Object.entries(ability)) {
     abilityArr.push(`${name.ability.name} `);
   }
+
   const aboutDets = [
     {
       title: "pokedex_id",
@@ -42,12 +45,13 @@ export default function About(props) {
             <div key={index} className="basic-details d-flex">
               <div className="col-5 stat-title">{data.title}</div>
               <div className="col-6 stat-value">
-                {data.value ? data.value : "unknown"}
+                {data.value ? data.value : "n/a"}
               </div>
             </div>
           );
         })}
       </div>
+      <Items results={props.results} />
     </div>
   );
 }
