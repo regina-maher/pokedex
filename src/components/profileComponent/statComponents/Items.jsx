@@ -20,6 +20,11 @@ const Items = (props) => {
               return (
                 <div className="row" key={index}>
                   <div className="col-3">
+                    <img
+                      src={itemData.sprites.default}
+                      className="img-fluid item"
+                      alt={itemData.name}
+                    />
                     <div className="basic-details">{itemData.name}</div>
                     <div className="details">item id: {itemData.id}</div>
                   </div>
