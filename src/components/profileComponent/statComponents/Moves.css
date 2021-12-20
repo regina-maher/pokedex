@@ -5,22 +5,22 @@
   width: 230px;
   font-weight: 300;
   border-radius: 10px;
+  color: white;
 }
 .Moves .move-name {
   font-weight: 900;
-  padding-bottom: 5px;
+  padding-bottom: 0;
   text-transform: uppercase;
-  color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 .Moves .move-detail-title {
-  font-size: 10px;
+  font-size: 13px;
 }
 .Moves .move-details {
-  font-size: 10px;
+  font-size: 13px;
 }
 .Moves .move-effect {
-  font-size: 11px;
+  font-size: 13px;
 }
 .Moves li {
   padding-bottom: 2px;
