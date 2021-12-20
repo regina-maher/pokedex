@@ -42,7 +42,7 @@ export default function Profile(props) {
           </div>
         </section>
         <section className="poke-stats">
-          <StatSections results={props.results} />
+          <StatSections results={props.results} id={mainType} />
         </section>
       </div>
     );

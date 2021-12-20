@@ -1,8 +1,37 @@
-.Moves .move {
-  font-size: 10px;
+.Moves .card {
+  font-size: 14px;
+  padding: 5px;
+  margin: 5px;
+  width: 230px;
   font-weight: 300;
+  border-radius: 10px;
 }
-.Moves .move span {
-  padding-left: 7px;
-  font-weight: 400;
+.Moves .move-name {
+  font-weight: 900;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+}
+.Moves .move-detail-title {
+  font-size: 10px;
+}
+.Moves .move-details {
+  font-size: 10px;
+}
+.Moves .move-effect {
+  font-size: 11px;
+}
+.Moves li {
+  padding-bottom: 2px;
+}
+.Moves {
+  max-height: 300px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+.Moves .move-effect {
+  max-height: 70px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }

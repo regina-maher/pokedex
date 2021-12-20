@@ -34,7 +34,7 @@ export default function StatSections(props) {
     {
       id: 5,
       title: "moves",
-      content: <Moves results={props.results} />,
+      content: <Moves results={props.results} id={props.id} />,
     },
   ];
   return (
