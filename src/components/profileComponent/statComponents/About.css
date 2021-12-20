@@ -9,3 +9,9 @@
 .About .item-details {
   font-size: 10px;
 }
+.About .col-5 {
+  padding-left: 0;
+}
+.About .col-7 {
+  padding-left: 15px;
+}

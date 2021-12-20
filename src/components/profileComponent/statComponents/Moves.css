@@ -9,7 +9,7 @@
 }
 .Moves .move-name {
   font-weight: 900;
-  padding-bottom: 0;
+  padding-bottom: 10px;
   text-transform: uppercase;
   font-size: 20px;
 }
@@ -23,7 +23,10 @@
   font-size: 13px;
 }
 .Moves li {
-  padding-bottom: 2px;
+  padding-bottom: 1px;
+}
+.Moves .break {
+  padding-bottom: 10px;
 }
 .Moves {
   max-height: 300px;
