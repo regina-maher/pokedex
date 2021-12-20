@@ -19,7 +19,7 @@ export default function StatSections(props) {
     {
       id: 2,
       title: "stats",
-      content: <BaseStats results={props.results} />,
+      content: <BaseStats results={props.results} id={props.id} />,
     },
     {
       id: 3,

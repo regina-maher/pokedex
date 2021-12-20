@@ -20,7 +20,7 @@ function StatBars(props) {
       <div className="row pt-3">
         {skillBar.map((item, index) => (
           <div key={index} className="col-sm bar">
-            <ProgressBar completed={item.completed} />
+            <ProgressBar id={props.id} completed={item.completed} />
           </div>
         ))}
       </div>

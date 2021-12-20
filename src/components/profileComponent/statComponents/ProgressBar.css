@@ -8,9 +8,7 @@
 }
 .ProgressBar .bar {
   height: 100%;
-
   border-radius: inherit;
-  background-color: var(--text-colour);
   text-align: right;
   margin-right: 5;
 }

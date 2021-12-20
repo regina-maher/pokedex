@@ -39,7 +39,7 @@ export default function BaseStats(props) {
           })}
         </div>
         <div className="col-6">
-          <StatBars results={props.results} stats={stats} />
+          <StatBars id={props.id} results={props.results} stats={stats} />
         </div>
       </div>
     </div>
