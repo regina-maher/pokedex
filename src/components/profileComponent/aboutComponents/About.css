@@ -1,10 +1,10 @@
 .About .stat-title {
   font-size: 12px;
-  padding: 5px;
+  padding: 2px;
 }
 .About .stat-value {
   font-size: 12px;
-  padding: 5px;
+  padding: 2px;
 }
 .About .item-details {
   font-size: 10px;
@@ -14,4 +14,7 @@
 }
 .About .col-7 {
   padding-left: 15px;
+}
+.About .loading {
+  font-size: 10px;
 }

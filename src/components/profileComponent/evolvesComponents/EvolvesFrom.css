@@ -1,0 +1,8 @@
+.EvolvesFrom img.pokemon {
+  max-height: 100px;
+}
+.EvolvesFrom .card {
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+}

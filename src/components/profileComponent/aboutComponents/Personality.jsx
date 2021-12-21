@@ -1,24 +1,23 @@
 import React from "react";
-import { useFetch } from "./useFetch";
+import { useFetch } from "../useFetch";
 
 const Personality = (props) => {
   let url = props.results.species.url;
   const { data, loading } = useFetch(url);
   if (!loading) {
-    console.log(data.data);
     let personalityDets = [
       {
-        title: "base happiness",
+        title: "😊 base happiness",
         value: data.data.base_happiness,
       },
       {
-        title: "capture rate",
+        title: "🔴 capture rate",
         value: data.data.capture_rate,
       },
     ];
     return (
       <div className="Personality">
-        <h5 className="stat-heading">personality details</h5>
+        <h5 className="stat-heading pt-2">personality details</h5>
         <div className="row">
           {personalityDets.map((trait, index) => {
             return (
@@ -32,7 +31,7 @@ const Personality = (props) => {
       </div>
     );
   } else {
-    return null;
+    return <div className="loading">retrieveing personality traits....</div>;
   }
 };
 export default Personality;

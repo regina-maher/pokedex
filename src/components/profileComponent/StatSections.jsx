@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./StatSections.css";
-import BaseStats from "./statComponents/BaseStats";
-import About from "./statComponents/About";
-import Evolution from "./statComponents/Evolution";
+import BaseStats from "./statsComponents/BaseStats";
+import About from "./aboutComponents/About";
+import Evolution from "./evolvesComponents/Evolution";
 import NavHeading from "./NavHeading";
-import Items from "./statComponents/Items";
-import Moves from "./statComponents/Moves";
+import Items from "./Items";
+import Moves from "./Moves";
+import { useFetch } from "./useFetch";
 
 export default function StatSections(props) {
+  let url = props.results.species.url;
+  const { data, loading } = useFetch(url);
   const [...stats] = props.results.stats;
   const [activeTab, setActiveTab] = useState(1);
   const tabContent = [
@@ -29,7 +32,9 @@ export default function StatSections(props) {
     {
       id: 4,
       title: "evolution",
-      content: <Evolution results={props.results} />,
+      content: (
+        <Evolution results={props.results} data={data} loading={loading} />
+      ),
     },
     {
       id: 5,

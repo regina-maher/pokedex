@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./About.css";
+import Additional from "./Additional";
 import Personality from "./Personality";
-import { useFetch } from "./useFetch";
+import { useFetch } from "../useFetch";
 
 export default function About(props) {
+  let url = props.results.species.url;
+  const { data, loading } = useFetch(url);
   const [...ability] = props.results.abilities;
   const abilityArr = [];
   for (const [key, { ...name }] of Object.entries(ability)) {
@@ -38,7 +41,7 @@ export default function About(props) {
   return (
     <div className="About">
       <div className="row">
-        <div className="col-7">
+        <div className="col-6">
           <h5 className="stat-heading">basic details</h5>
           <div className="row">
             {aboutDets.map((data, index) => {
@@ -52,9 +55,12 @@ export default function About(props) {
               );
             })}
           </div>
+          <div className="pt-3">
+            <Personality results={props.results} />
+          </div>
         </div>
-        <div className="col-5">
-          <Personality results={props.results} />
+        <div className="col-6">
+          <Additional results={props.results} data={data} loading={loading} />
         </div>
       </div>
     </div>
