@@ -4,12 +4,12 @@ import "./Types.css";
 
 const Types = (props) => {
   const typeTitles = [
-    "2 x damage from",
-    "2 x damage to",
-    "1/2 x damage from",
-    "1/2 x damage to",
-    "no damage from",
-    "no damage to",
+    "2 x damage from ❗",
+    "2 x damage to ✔️",
+    "1/2 x damage from ✔️",
+    "1/2 x damage to ❗",
+    "no damage from ✔️",
+    "no damage to ❗",
     "damage class",
   ];
   const damageArr = [];
@@ -17,7 +17,7 @@ const Types = (props) => {
     return (
       <div className="Types">
         <div className="row">
-          <div className="col-4">
+          <div className="col-4 titles">
             <ul className="title-section">
               {typeTitles.map((title, index) => {
                 return (
@@ -33,7 +33,7 @@ const Types = (props) => {
             if (!loading) {
               let damage = data.data.damage_relations;
               return (
-                <div key={index} className="col-4">
+                <div key={index} className="col-4 results">
                   <h5 className="stat-heading ps-2 pb-2">{type.name}</h5>
                   <ul>
                     <li className="type-results">
