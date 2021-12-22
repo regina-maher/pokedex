@@ -34,10 +34,13 @@ export default function Search(props) {
     return (
       <div className="Search">
         <div className="container-fluid">
-          <button onClick={resetHome}>
-            {/* <i className="fas fa-home" /> */}
-            <i className="fas fa-arrow-left"></i>
-          </button>
+          {props.search ? (
+            <button onClick={resetHome}>
+              <i className="fas fa-home" />
+            </button>
+          ) : (
+            ""
+          )}
           <div className={props.searched ? "hide" : ""}>
             <div className="d-flex justify-content-between">
               <h1 className="title">Pokedex</h1>
