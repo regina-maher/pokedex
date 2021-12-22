@@ -37,7 +37,7 @@ const EvolvesFrom = (props) => {
   } else {
     return (
       <div className="EvolvesFrom">
-        {props.results.names} does not evolve from another pokemon
+        {props.results?.names} does not evolve from another pokemon
       </div>
     );
   }
