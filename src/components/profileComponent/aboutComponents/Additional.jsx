@@ -44,7 +44,7 @@ const Additional = (props) => {
     ];
     return (
       <div className="Additional pe-2">
-        <h5 className="stat-heading">Additional details</h5>
+        <h5 className="stat-heading ps-3">Additional details</h5>
         {addArr.map((data, index) => {
           return (
             <div key={index} className="basic-details d-flex">

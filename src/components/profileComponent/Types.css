@@ -1,0 +1,27 @@
+.Types .type-results {
+  padding: 5px;
+  font-size: 13px;
+}
+.Types .type-title {
+  padding: 6px;
+  text-align: right;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.Types .title-section {
+  padding-top: 35px;
+}
+.Types .results {
+  width: 150px;
+}
+.Types .titles {
+  width: 180px;
+  padding: 15px;
+}
+.Types .card {
+  padding: 15px;
+  color: white;
+  border: none;
+  box-shadow: var(--box-shadow);
+  margin-right: 10px;
+}

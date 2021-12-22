@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetch } from "../useFetch";
+import { useFetch } from "./useFetch";
 import "./Types.css";
 
 const Types = (props) => {
@@ -33,7 +33,7 @@ const Types = (props) => {
             if (!loading) {
               let damage = data.data.damage_relations;
               return (
-                <div key={index} className="col-4 results">
+                <div id={type.name} key={index} className="col-4 card results">
                   <h5 className="stat-heading ps-2 pb-2">{type.name}</h5>
                   <ul>
                     <li className="type-results">

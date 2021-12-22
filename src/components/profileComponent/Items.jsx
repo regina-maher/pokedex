@@ -8,6 +8,7 @@ const Items = (props) => {
   for (const [key, { ...name }] of Object.entries(items)) {
     itemsUrlArr.push({ itemHeld: name.item.url });
   }
+  console.log(props.results);
   if (items.length > 0) {
     return (
       <div className="Items  ps-4">
@@ -63,7 +64,7 @@ const Items = (props) => {
     return (
       <div className="Items">
         <h5 className="stat-heading pt-4">items held</h5>
-        <p>n/a</p>
+        <p>- {props.results.name} does not hold any items</p>
       </div>
     );
   }

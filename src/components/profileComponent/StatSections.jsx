@@ -5,7 +5,7 @@ import About from "./aboutComponents/About";
 import Evolution from "./evolvesComponents/Evolution";
 import NavHeading from "./NavHeading";
 import Items from "./Items";
-import Types from "./evolvesComponents/Types";
+import Types from "./Types";
 import Moves from "./Moves";
 import { useFetch } from "./useFetch";
 

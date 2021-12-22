@@ -6,6 +6,8 @@
   font-weight: 300;
   border-radius: 10px;
   color: white;
+  box-shadow: var(--box-shadow);
+  border: none;
 }
 .Moves .move-name {
   font-weight: 900;
