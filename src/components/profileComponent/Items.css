@@ -42,3 +42,8 @@
 .Items li strong {
   padding-right: 10px;
 }
+.Items {
+  max-height: 190px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}

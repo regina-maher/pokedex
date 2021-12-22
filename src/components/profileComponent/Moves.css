@@ -16,13 +16,13 @@
   font-size: 20px;
 }
 .Moves .move-detail-title {
-  font-size: 13px;
+  font-size: 11px;
 }
 .Moves .move-details {
-  font-size: 13px;
+  font-size: 11px;
 }
 .Moves .move-effect {
-  font-size: 13px;
+  font-size: 12px;
 }
 .Moves li {
   padding-bottom: 1px;
@@ -31,7 +31,7 @@
   padding-bottom: 10px;
 }
 .Moves {
-  max-height: 300px;
+  max-height: 250px;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }

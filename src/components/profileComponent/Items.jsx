@@ -10,7 +10,7 @@ const Items = (props) => {
   }
   if (items.length > 0) {
     return (
-      <div className="Items  ps-4">
+      <div className="Items pe-4 ps-4">
         <h5 className="stat-heading pb-2">items held</h5>
         {itemsUrlArr.map((item, index) => {
           const { data, loading } = useFetch(item.itemHeld);

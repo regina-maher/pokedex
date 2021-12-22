@@ -12,39 +12,61 @@ const Moves = (props) => {
           const {
             version_group_details: [name],
           } = move;
+          const moveArr = [
+            {
+              title: "level learned at",
+              value: name.level_learned_at,
+            },
+            {
+              title: "learning method",
+              value: name.move_learn_method.name,
+            },
+            {
+              title: "type",
+              value: data.data.type.name,
+            },
+            {
+              title: "accuracy",
+              value: data.data.accuracy,
+            },
+            {
+              title: "damage class",
+              value: data.data.damage_class.name,
+            },
+            {
+              title: "damage category",
+              value: data.data.meta.category.name,
+            },
+            {
+              title: "drain",
+              value: data.data.meta.drain,
+            },
+            {
+              title: "pp",
+              value: data.data.pp,
+            },
+            {
+              title: "power",
+              value: data.data.power,
+            },
+          ];
           if (!loading) {
             return (
               <div id={props.id} className="col-6 card move ps-3" key={index}>
                 <div className="move-name pt-2">{data.data.name}</div>
                 <div className="row">
-                  <div className="col-7 move-detail-title">
-                    <ul>
-                      <li>level learned at:</li>
-                      <li className="break">learning method:</li>
-                      <li>type:</li>
-                      <li>accuracy:</li>
-                      <li>damage class:</li>
-                      <li>damage category:</li>
-                      <li>drain:</li>
-                      <li>pp:</li>
-                      <li>power:</li>
-                    </ul>
-                  </div>
-                  <div className="col-5 move-details">
-                    <ul>
-                      <li>{name.level_learned_at}</li>
-                      <li className="break">{name.move_learn_method.name}</li>
-                      <li>{data.data.type.name}</li>
-                      <li>{data.data.accuracy}</li>
-                      <li>{data.data.damage_class.name}</li>
-                      <li>{data.data.meta.category.name}</li>
-                      <li>{data.data.meta.drain}</li>
-                      <li>{data.data.pp}</li>
-                      <li>{data.data.power}</li>
-                    </ul>
-                  </div>
+                  {moveArr.map((move, index) => {
+                    return (
+                      <div key={index} className="d-flex">
+                        <div className="move-detail-title col-7">
+                          {move.title}
+                        </div>
+                        <div className="move-details col-5">{move.value}</div>
+                      </div>
+                    );
+                  })}
                 </div>
-                <div className="move-effect">
+                <div className="move-effect pt-3">
                   {data.data.effect_entries[0].effect}
                 </div>
               </div>

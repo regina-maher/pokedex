@@ -12,7 +12,10 @@ const Evolution = (props) => {
     }
     return (
       <div className="Evolution">
-        <EvolvesFrom data={props.data.data.evolves_from_species} />
+        <EvolvesFrom
+          data={props.data.data.evolves_from_species}
+          name={props.data.data.name}
+        />
       </div>
     );
   } else {
