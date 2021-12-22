@@ -6,9 +6,8 @@ import axios from "axios";
 
 export default function Search(props) {
   const [loaded, setLoading] = useState(false);
-  const [keyword, setKeyword] = useState("");
   const search = () => {
-    let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${keyword}`;
+    let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
     axios.get(apiUrl).then(handleResponse);
     props.setSearched(true);
   };
@@ -19,7 +18,7 @@ export default function Search(props) {
     setLoading(true);
   };
   const updateWord = (response) => {
-    setKeyword(response.target.value);
+    props.setKeyword(response.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();

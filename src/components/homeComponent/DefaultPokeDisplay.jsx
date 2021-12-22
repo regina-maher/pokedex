@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DefaultPokeDisplay.css";
 import pokeball from "../../images/pokeball.jpg";
+import { useFetch } from "../profileComponent/useFetch";
 
 export default function DefaultPokeDisplay(props) {
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
+
   const pokeApiArray = [];
   const pokeTypes = [];
   const [pokeDataArray, setPokeDataArray] = useState([]);
@@ -91,6 +93,15 @@ export default function DefaultPokeDisplay(props) {
       },
     ]);
   }
+  let url;
+  if (props.keyword.length > 0) {
+    url = `https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
+  }
+  const { data, loading } = useFetch(url);
+  if (!loading) {
+    props.setResults(data);
+    props.setSearched(true);
+  }
   useEffect(() => {
     fetchData();
   }, []);
@@ -103,6 +114,7 @@ export default function DefaultPokeDisplay(props) {
               <div key={index} className="col-6">
                 <div
                   id={poke.types.length >= 1 ? poke.types[0] : poke.types}
+                  onClick={() => props.setKeyword(poke.name)}
                   className="d-flex tab justify-content-evenly"
                 >
                   <div className="body">

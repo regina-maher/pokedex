@@ -8,7 +8,6 @@ const Items = (props) => {
   for (const [key, { ...name }] of Object.entries(items)) {
     itemsUrlArr.push({ itemHeld: name.item.url });
   }
-  console.log(props.results);
   if (items.length > 0) {
     return (
       <div className="Items  ps-4">

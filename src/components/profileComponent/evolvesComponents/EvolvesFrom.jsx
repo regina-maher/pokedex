@@ -5,7 +5,7 @@ import Types from "../Types";
 
 const EvolvesFrom = (props) => {
   console.log(props.data);
-  if (!props.data == null) {
+  if (props.data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${props.data.name}`;
     const { data, loading } = useFetch(url);
     const typeArry = [];
@@ -36,7 +36,9 @@ const EvolvesFrom = (props) => {
     }
   } else {
     return (
-      <div className="EvolvesFrom">Does not evolve from another pokemon</div>
+      <div className="EvolvesFrom">
+        {props.results.names} does not evolve from another pokemon
+      </div>
     );
   }
 };

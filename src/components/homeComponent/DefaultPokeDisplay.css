@@ -2,11 +2,16 @@
   height: 50px;
 }
 .DefaultPokeDisplay .tab {
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
   padding: 10px;
   color: var(--light-grey);
   border-radius: 4px;
   margin: 25px 1px 0;
+  transition: all 200ms ease-in-out;
+}
+.DefaultPokeDisplay .tab:hover {
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 .DefaultPokeDisplay ul {
   list-style: none;
