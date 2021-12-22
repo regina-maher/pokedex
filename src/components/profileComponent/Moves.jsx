@@ -12,45 +12,45 @@ const Moves = (props) => {
           const {
             version_group_details: [name],
           } = move;
-          const moveArr = [
-            {
-              title: "level learned at",
-              value: name.level_learned_at,
-            },
-            {
-              title: "learning method",
-              value: name.move_learn_method.name,
-            },
-            {
-              title: "type",
-              value: data.data.type.name,
-            },
-            {
-              title: "accuracy",
-              value: data.data.accuracy,
-            },
-            {
-              title: "damage class",
-              value: data.data.damage_class.name,
-            },
-            {
-              title: "damage category",
-              value: data.data.meta.category.name,
-            },
-            {
-              title: "drain",
-              value: data.data.meta.drain,
-            },
-            {
-              title: "pp",
-              value: data.data.pp,
-            },
-            {
-              title: "power",
-              value: data.data.power,
-            },
-          ];
           if (!loading) {
+            const moveArr = [
+              {
+                title: "level learned at",
+                value: name.level_learned_at,
+              },
+              {
+                title: "learning method",
+                value: name.move_learn_method.name,
+              },
+              {
+                title: "type",
+                value: data.data.type.name,
+              },
+              {
+                title: "accuracy",
+                value: data.data.accuracy,
+              },
+              {
+                title: "damage class",
+                value: data.data.damage_class.name,
+              },
+              {
+                title: "damage category",
+                value: data.data.meta.category.name,
+              },
+              {
+                title: "drain",
+                value: data.data.meta.drain,
+              },
+              {
+                title: "pp",
+                value: data.data.pp,
+              },
+              {
+                title: "power",
+                value: data.data.power,
+              },
+            ];
             return (
               <div id={props.id} className="col-6 card move ps-3" key={index}>
                 <div className="move-name pt-2">{data.data.name}</div>
@@ -66,7 +66,7 @@ const Moves = (props) => {
                     );
                   })}
                 </div>
-                <div className="move-effect pt-3">
+                <div className="move-effect">
                   {data.data.effect_entries[0].effect}
                 </div>
               </div>
