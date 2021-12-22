@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 function App() {
+  // const [results, setResults] = useState("");
   const [results, setResults] = useState(() =>
     JSON.parse(localStorage.getItem("results"))
   );

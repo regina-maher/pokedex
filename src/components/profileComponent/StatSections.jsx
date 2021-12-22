@@ -5,6 +5,7 @@ import About from "./aboutComponents/About";
 import Evolution from "./evolvesComponents/Evolution";
 import NavHeading from "./NavHeading";
 import Items from "./Items";
+import Types from "./evolvesComponents/Types";
 import Moves from "./Moves";
 import { useFetch } from "./useFetch";
 
@@ -26,18 +27,23 @@ export default function StatSections(props) {
     },
     {
       id: 3,
+      title: "types",
+      content: <Types results={props.results} />,
+    },
+    {
+      id: 4,
       title: "items",
       content: <Items results={props.results} />,
     },
     {
-      id: 4,
+      id: 6,
       title: "evolution",
       content: (
         <Evolution results={props.results} data={data} loading={loading} />
       ),
     },
     {
-      id: 5,
+      id: 6,
       title: "moves",
       content: <Moves results={props.results} id={props.id} />,
     },
