@@ -4,13 +4,13 @@ import "./Types.css";
 
 const Types = (props) => {
   const typeTitles = [
+    "damage class",
     "2 x damage from ❗",
+    "1/2 x damage to ❗",
+    "no damage to ❗",
     "2 x damage to ✔️",
     "1/2 x damage from ✔️",
-    "1/2 x damage to ❗",
     "no damage from ✔️",
-    "no damage to ❗",
-    "damage class",
   ];
   const damageArr = [];
   if (props.typeArry) {
@@ -37,8 +37,19 @@ const Types = (props) => {
                   <h5 className="stat-heading ps-2 pb-2">{type.name}</h5>
                   <ul>
                     <li className="type-results">
+                      {data.data.move_damage_class.name}
+                    </li>
+                    <li className="type-results">
                       {damage.double_damage_from[0]?.name}{" "}
                       {damage.double_damage_from[1]?.name}
+                    </li>
+                    <li className="type-results">
+                      {damage.half_damage_to[0]?.name}{" "}
+                      {damage.half_damage_to[1]?.name}
+                    </li>
+                    <li className="type-results">
+                      {damage.no_damage_to[0]?.name}{" "}
+                      {damage.no_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
                       {damage.double_damage_to[0]?.name}{" "}
@@ -49,19 +60,8 @@ const Types = (props) => {
                       {damage.half_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.half_damage_to[0]?.name}{" "}
-                      {damage.half_damage_to[1]?.name}
-                    </li>
-                    <li className="type-results">
-                      {damage.no_damage_to[0]?.name}{" "}
-                      {damage.no_damage_to[1]?.name}
-                    </li>
-                    <li className="type-results">
-                      {damage.no_damage_to[0]?.name}{" "}
-                      {damage.no_damage_to[1]?.name}
-                    </li>
-                    <li className="type-results">
-                      {data.data.move_damage_class.name}
+                      {damage.no_damage_from[0]?.name}{" "}
+                      {damage.no_damage_from[1]?.name}
                     </li>
                   </ul>
                 </div>

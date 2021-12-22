@@ -3,12 +3,12 @@
   opacity: 0.2;
   position: absolute;
   z-index: 2;
-  left: 620px;
+  left: 50vw;
   top: 15px;
 }
 .Search .searched .pokeball-icon {
   width: 14vw;
-  left: 700px;
+  left: 55vw;
 }
 .Search .searched .heading {
   font-size: 1.5vw;

@@ -48,8 +48,8 @@ const Additional = (props) => {
         {addArr.map((data, index) => {
           return (
             <div key={index} className="basic-details d-flex">
-              <div className="col-8 stat-title">{data.title}:</div>
-              <div className="col-4 stat-value">{data.value}</div>
+              <div className="col-7 stat-title">{data.title}:</div>
+              <div className="col-5 stat-value">{data.value}</div>
             </div>
           );
         })}
