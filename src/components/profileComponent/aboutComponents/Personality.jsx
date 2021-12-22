@@ -21,7 +21,7 @@ const Personality = (props) => {
         <div className="row">
           {personalityDets.map((trait, index) => {
             return (
-              <div key={index} className="basic-details d-flex">
+              <div key={index} className="d-flex">
                 <div className="col-8 stat-title">{trait.title}:</div>
                 <div className="col-4 stat-value">{trait.value}</div>
               </div>

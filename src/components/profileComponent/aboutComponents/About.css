@@ -13,11 +13,20 @@
   padding-left: 0;
 }
 .About .col-7 {
-  padding-left: 15px;
+  /* padding-left: 15px; */
 }
 .About .loading {
   font-size: 10px;
 }
 .About {
-  padding: 5px 20px;
+  padding: 5px 40px;
+  max-height: 220px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+.basic-details {
+  box-shadow: var(--box-shadow);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
 }

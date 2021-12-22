@@ -1,4 +1,4 @@
-.Items .basic-details {
+.Items .type-details {
   font-size: 13px;
   font-weight: 800;
   opacity: 0.8;
@@ -6,12 +6,27 @@
 }
 .Items .item {
   width: 40px;
+  margin: auto;
 }
 .Items .details {
   opacity: 0.6;
   font-weight: 400;
   font-size: 12px;
   padding-top: 5px;
+}
+.Items .card {
+  border: none;
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+}
+.Items .card.berry {
+  text-align: center;
+}
+.Items .card.berry-dets {
+  text-align: start;
+  padding: 15px;
+  padding-bottom: 0;
+  margin-bottom: 15px;
 }
 .Items p {
   font-size: 14px;

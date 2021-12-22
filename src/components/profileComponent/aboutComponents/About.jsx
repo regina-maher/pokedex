@@ -40,28 +40,26 @@ export default function About(props) {
   ];
   return (
     <div className="About">
-      <div className="row">
-        <div className="col-6">
-          <h5 className="stat-heading">basic details</h5>
-          <div className="row">
-            {aboutDets.map((data, index) => {
-              return (
-                <div key={index} className="basic-details d-flex">
-                  <div className="col-6 stat-title">{data.title}:</div>
-                  <div className="col-6 stat-value">
-                    {data.value ? data.value : "n/a"}
-                  </div>
+      <div className="basic-details">
+        <h5 className="stat-heading ">basic details</h5>
+        <div className="row">
+          {aboutDets.map((data, index) => {
+            return (
+              <div key={index} className="d-flex">
+                <div className="col-6 stat-title">{data.title}:</div>
+                <div className="col-6 stat-value">
+                  {data.value ? data.value : "n/a"}
                 </div>
-              );
-            })}
-          </div>
-          <div className="pt-3">
-            <Personality results={props.results} />
-          </div>
+              </div>
+            );
+          })}
         </div>
-        <div className="col-6">
-          <Additional results={props.results} data={data} loading={loading} />
-        </div>
+      </div>
+      <div className="pt-3 pb-3 basic-details">
+        <Personality results={props.results} />
+      </div>
+      <div className="basic-details">
+        <Additional results={props.results} data={data} loading={loading} />
       </div>
     </div>
   );

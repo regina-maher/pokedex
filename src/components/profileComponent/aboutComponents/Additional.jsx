@@ -43,11 +43,11 @@ const Additional = (props) => {
       },
     ];
     return (
-      <div className="Additional pe-2">
-        <h5 className="stat-heading ps-3">Additional details</h5>
+      <div className="Additional pt-2">
+        <h5 className="stat-heading">Additional details</h5>
         {addArr.map((data, index) => {
           return (
-            <div key={index} className="basic-details d-flex">
+            <div key={index} className="d-flex">
               <div className="col-7 stat-title">{data.title}:</div>
               <div className="col-5 stat-value">{data.value}</div>
             </div>
