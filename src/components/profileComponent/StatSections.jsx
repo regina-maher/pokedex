@@ -14,6 +14,11 @@ export default function StatSections(props) {
   const { data, loading } = useFetch(url);
   const [...stats] = props.results.stats;
   const [activeTab, setActiveTab] = useState(1);
+  const typeArry = [];
+  const types = props.results.types;
+  for (const [key, { ...type }] of Object.entries(types)) {
+    typeArry.push({ name: type.type.name, url: type.type.url });
+  }
   const tabContent = [
     {
       id: 1,
@@ -28,7 +33,7 @@ export default function StatSections(props) {
     {
       id: 3,
       title: "types",
-      content: <Types results={props.results} />,
+      content: <Types results={props.results} typeArry={typeArry} />,
     },
     {
       id: 4,

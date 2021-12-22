@@ -1,14 +1,78 @@
 import React from "react";
 import { useFetch } from "../useFetch";
+import "./Types.css";
 
 const Types = (props) => {
-  const { data, loading } = useFetch(props.url[0]);
-  if (!loading) {
-    console.log(data.data);
-    return <div className="Types">meow</div>;
-  } else {
-    return <div className="loading">Loading...</div>;
-  }
+  console.log(props);
+  const typeTitles = [
+    "2 x damage from",
+    "2 x damage to",
+    "1/2 x damage from",
+    "1/2 x damage to",
+    "no damage from",
+    "no damage to",
+    "damage class",
+  ];
+  const damageArr = [];
+  return (
+    <div className="Types">
+      <div className="row">
+        <div className="col-4">
+          <ul className="title-section">
+            {typeTitles.map((title, index) => {
+              return (
+                <li key={index} className="type-title">
+                  {title}:
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {props.typeArry.map((type, index) => {
+          const { data, loading } = useFetch(type.url);
+          if (!loading) {
+            let damage = data.data.damage_relations;
+            console.log(data.data);
+            console.log(damage);
+            return (
+              <div key={index} className="col-4">
+                <h5 className="stat-heading ps-2 pb-2">{type.name}</h5>
+                <ul>
+                  <li className="type-results">
+                    {damage.double_damage_from[0]?.name}{" "}
+                    {damage.double_damage_from[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {damage.double_damage_to[0]?.name}{" "}
+                    {damage.double_damage_to[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {damage.half_damage_to[0]?.name}{" "}
+                    {damage.half_damage_to[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {damage.half_damage_to[0]?.name}{" "}
+                    {damage.half_damage_to[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {damage.no_damage_to[0]?.name}{" "}
+                    {damage.no_damage_to[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {damage.no_damage_to[0]?.name}{" "}
+                    {damage.no_damage_to[1]?.name}
+                  </li>
+                  <li className="type-results">
+                    {data.data.move_damage_class.name}
+                  </li>
+                </ul>
+              </div>
+            );
+          }
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Types;

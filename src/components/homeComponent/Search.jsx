@@ -34,9 +34,9 @@ export default function Search(props) {
     return (
       <div className="Search">
         <div className="container-fluid">
-          {props.search ? (
+          {props.searched ? (
             <button onClick={resetHome}>
-              <i className="fas fa-home" />
+              <i className="fas fa-arrow-left" />
             </button>
           ) : (
             ""
