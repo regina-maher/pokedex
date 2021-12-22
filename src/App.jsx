@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 function App() {
-  // const [results, setResults] = useState("");
   const [results, setResults] = useState(() =>
     JSON.parse(localStorage.getItem("results"))
   );
@@ -18,12 +17,12 @@ function App() {
         <Route
           exact
           path="/"
-          element={<Home results={results} setResults={setResults} />}
+          element={<Home results={results || ""} setResults={setResults} />}
         />
         <Route
           exact
           path="Profile"
-          element={<Profile results={results.data} />}
+          element={<Profile results={results.data || ""} />}
         />
       </Routes>
     </div>
