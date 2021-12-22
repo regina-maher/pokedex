@@ -72,7 +72,7 @@ export default function Search(props) {
               />
             </form>
           </div>
-          {props.results ? <PokemonFindings results={props.results} /> : ""}
+          {props.searched ? <PokemonFindings results={props.results} /> : ""}
         </div>
       </div>
     );
