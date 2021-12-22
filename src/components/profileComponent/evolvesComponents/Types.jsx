@@ -40,27 +40,27 @@ const Types = (props) => {
                       {data.data.move_damage_class.name}
                     </li>
                     <li className="type-results">
-                      {damage.double_damage_from[0]?.name}{" "}
+                      {damage.double_damage_from[0]?.name ?? "n/a"}{" "}
                       {damage.double_damage_from[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.half_damage_to[0]?.name}{" "}
+                      {damage.half_damage_to[0]?.name ?? "n/a"}{" "}
                       {damage.half_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.no_damage_to[0]?.name}{" "}
+                      {damage.no_damage_to[0]?.name ?? "n/a"}{" "}
                       {damage.no_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.double_damage_to[0]?.name}{" "}
+                      {damage.double_damage_to[0]?.name ?? "n/a"}{" "}
                       {damage.double_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.half_damage_to[0]?.name}{" "}
+                      {damage.half_damage_to[0]?.name ?? "n/a"}{" "}
                       {damage.half_damage_to[1]?.name}
                     </li>
                     <li className="type-results">
-                      {damage.no_damage_from[0]?.name}{" "}
+                      {damage.no_damage_from[0]?.name ?? "n/a"}{" "}
                       {damage.no_damage_from[1]?.name}
                     </li>
                   </ul>
