@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [results, setResults] = useState(() =>
-    JSON.parse(localStorage.getItem("results"))
+    JSON.parse(localStorage.getItem("results") || "")
   );
   useEffect(() => {
     localStorage.setItem("results", JSON.stringify(results));
