@@ -43,7 +43,7 @@ const Additional = (props) => {
       },
     ];
     return (
-      <div className="Additional">
+      <div className="Additional pe-2">
         <h5 className="stat-heading">Additional details</h5>
         {addArr.map((data, index) => {
           return (
