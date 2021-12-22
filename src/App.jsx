@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const storageResults = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storageResults) {
-      setTodos(storageResults);
+      setResults(storageResults);
     }
   }, []);
 
