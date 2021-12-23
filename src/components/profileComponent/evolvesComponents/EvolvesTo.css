@@ -1,8 +1,19 @@
 .EvolvesTo .card {
-  padding: 15px;
+  padding: 15px 25px;
   width: 220px;
   border-radius: 10px;
   border: none;
   margin-right: 15px;
   box-shadow: var(--box-shadow);
+}
+.EvolvesTo .col-6 {
+  padding: 0;
+}
+.EvolvesTo .pokemon {
+  padding-right: 10px;
+  width: 100px;
+  max-height: 120px;
+}
+.EvolvesTo .details {
+  font-size: 12px;
 }

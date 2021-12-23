@@ -16,8 +16,8 @@ const Evolution = (props) => {
         data.data.chain.evolves_to[0]?.evolves_to[0]?.evolution_details[0];
       const evolvesToName =
         data.data.chain.evolves_to[0]?.evolves_to[0]?.species.name;
-      const evolvesToUrl =
-        data.data.chain.evolves_to[0]?.evolves_to[0]?.species.url;
+      // const evolvesToUrl =
+      //   data.data.chain.evolves_to[0]?.evolves_to[0]?.species.url;
 
       return (
         <div className="Evolution d-flex">
@@ -27,7 +27,6 @@ const Evolution = (props) => {
           />
           <EvolvesTo
             name={evolvesToName}
-            url={evolvesToUrl}
             evolvesTo1={evolvesToDetailsLog1}
             evolvesTo2={evolvesToDetailsLog2}
           />

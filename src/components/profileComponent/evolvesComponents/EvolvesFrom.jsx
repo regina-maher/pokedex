@@ -3,13 +3,11 @@ import { useFetch } from "../useFetch";
 import "./EvolvesFrom.css";
 
 const EvolvesFrom = (props) => {
-  console.log(props.data);
   if (props.data) {
     let url = `https://pokeapi.co/api/v2/pokemon/${props.data.name}`;
     const { data, loading } = useFetch(url);
     const typeArry = [];
     if (!loading) {
-      console.log(data.data);
       const types = data.data.types;
       for (const [key, { ...type }] of Object.entries(types)) {
         typeArry.push(type.type.name);
