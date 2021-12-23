@@ -1,17 +1,22 @@
 .EvolvesFrom img.pokemon {
-  max-height: 100px;
+  width: 100px;
+  padding-right: 10px;
+  max-height: 120px;
 }
 .EvolvesFrom .card {
   padding: 15px;
-  width: 240px;
+  width: 220px;
   border-radius: 10px;
   border: none;
+  margin-right: 15px;
   box-shadow: var(--box-shadow);
 }
 .EvolvesFrom .details {
   font-size: 12px;
 }
-.EvolvesFrom .col-6 {
+.EvolvesFrom .col-6.detail-col {
   padding-right: 0;
-  width: 60px;
+}
+.EvolvesFrom .col-6.poke-col {
+  padding-left: 0;
 }

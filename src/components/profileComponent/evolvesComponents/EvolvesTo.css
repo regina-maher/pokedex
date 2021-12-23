@@ -1,0 +1,8 @@
+.EvolvesTo .card {
+  padding: 15px;
+  width: 220px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 15px;
+  box-shadow: var(--box-shadow);
+}

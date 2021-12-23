@@ -66,7 +66,7 @@ const Moves = (props) => {
                     );
                   })}
                 </div>
-                <div className="move-effect">
+                <div className="move-effect pt-3">
                   {data.data.effect_entries[0].effect}
                 </div>
               </div>
