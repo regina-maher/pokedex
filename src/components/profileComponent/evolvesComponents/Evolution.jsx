@@ -27,6 +27,7 @@ const Evolution = (props) => {
           />
           <EvolvesTo
             name={evolvesToName}
+            OGName={props.data.data.name}
             evolvesTo1={evolvesToDetailsLog1}
             evolvesTo2={evolvesToDetailsLog2}
           />

@@ -34,13 +34,15 @@ const EvolvesFrom = (props) => {
             <div className="row">
               <div className="col-6 detail-col">
                 <h5 className="stat-heading">{props.data.name}</h5>
-                {typeArry.map((type, index) => {
-                  return (
-                    <div key={index} className="details pb-2">
-                      {type}
-                    </div>
-                  );
-                })}
+                <div className="d-flex justify-content-around">
+                  {typeArry.map((type, index) => {
+                    return (
+                      <div key={index} className="details-type pb-2">
+                        {type}
+                      </div>
+                    );
+                  })}
+                </div>
                 <div className="row">
                   {detailArr.map((detail, index) => {
                     return (
@@ -69,7 +71,8 @@ const EvolvesFrom = (props) => {
   } else {
     return (
       <div className="EvolvesFrom">
-        <div className="card">
+        <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
+        <div className="card no-evolve">
           {props.name}does not evolve from another pokemon
         </div>
       </div>
