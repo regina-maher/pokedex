@@ -1,12 +1,14 @@
 import React from "react";
 import { useFetch } from "../useFetch";
 import "./EvolvesTo.css";
+import Loader from "react-loader-spinner";
+import EvolvesToNext from "./EvolvesToNext";
 
 const EvolvesTo = (props) => {
-  if (props.name) {
+  if (props.lastEvolv.name) {
     console.log(props);
     const { data, loading } = useFetch(
-      `https://pokeapi.co/api/v2/pokemon/${props.name}`
+      `https://pokeapi.co/api/v2/pokemon/${props.lastEvolv.name}`
     );
     const typeArry = [];
     if (!loading) {
@@ -33,10 +35,11 @@ const EvolvesTo = (props) => {
       return (
         <div className="EvolvesTo">
           <h5 className="stat-heading ps-2 pb-3">Evolves to</h5>
+          <EvolvesToNext nextEvolv={props.nextEvolv} />
           <div className="card">
             <div className="row">
               <div className="col-6 detail-col">
-                <h5 className="stat-heading">{props.name}</h5>
+                <h5 className="stat-heading">{props.lastEvolv.name}</h5>
                 <div className="d-flex justify-content-around">
                   {typeArry.map((type, index) => {
                     return (
@@ -60,7 +63,7 @@ const EvolvesTo = (props) => {
               <div className="col-6 poke-col">
                 <img
                   className="img-fluid pokemon"
-                  alt={props.name}
+                  alt={props.lastEvolv.name}
                   src={data.data.sprites.other.dream_world.front_default}
                 />
               </div>
@@ -73,10 +76,10 @@ const EvolvesTo = (props) => {
     }
   } else {
     return (
-      <div className="EvolvesFrom">
+      <div className="EvolvesTo">
         <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
         <div className="card no-evolve">
-          {props.OGName}does not evolve from another pokemon
+          {props.OGName} does not evolve to another pokemon
         </div>
       </div>
     );

@@ -1,14 +1,15 @@
 import React from "react";
 import { useFetch } from "../useFetch";
-import "./EvolvesFrom.css";
-import Loader from "react-loader-spinner";
 
-const EvolvesFrom = (props) => {
-  if (props.data) {
-    let url = `https://pokeapi.co/api/v2/pokemon/${props.data.name}`;
-    const { data, loading } = useFetch(url);
+const EvolvesToNext = (props) => {
+  if (props.nextEvolv.name) {
+    console.log(props);
+    const { data, loading } = useFetch(
+      `https://pokeapi.co/api/v2/pokemon/${props.nextEvolv.name}`
+    );
     const typeArry = [];
     if (!loading) {
+      console.log(data.data);
       const types = data.data.types;
       for (const [key, { ...type }] of Object.entries(types)) {
         typeArry.push(type.type.name);
@@ -29,12 +30,11 @@ const EvolvesFrom = (props) => {
         },
       ];
       return (
-        <div className="EvolvesFrom">
-          <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
-          <div className="card">
+        <div className="EvolvesToNext">
+          <div className="card mb-3">
             <div className="row">
               <div className="col-6 detail-col">
-                <h5 className="stat-heading">{props.data.name}</h5>
+                <h5 className="stat-heading">{props.nextEvolv.name}</h5>
                 <div className="d-flex justify-content-around">
                   {typeArry.map((type, index) => {
                     return (
@@ -58,7 +58,7 @@ const EvolvesFrom = (props) => {
               <div className="col-6 poke-col">
                 <img
                   className="img-fluid pokemon"
-                  alt={props.data.name}
+                  alt={props.nextEvolv.name}
                   src={data.data.sprites.other.dream_world.front_default}
                 />
               </div>
@@ -67,22 +67,18 @@ const EvolvesFrom = (props) => {
         </div>
       );
     } else {
-      return (
-        <div className="loading">
-          <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
-        </div>
-      );
+      return null;
     }
   } else {
     return (
-      <div className="EvolvesFrom">
+      <div className="EvolvesToNext">
         <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
         <div className="card no-evolve">
-          {props.name} does not evolve from another pokemon
+          {props.OGName} does not evolve to another pokemon
         </div>
       </div>
     );
   }
 };
 
-export default EvolvesFrom;
+export default EvolvesToNext;
