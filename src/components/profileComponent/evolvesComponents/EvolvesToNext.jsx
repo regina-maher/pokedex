@@ -3,7 +3,6 @@ import { useFetch } from "../useFetch";
 
 const EvolvesToNext = (props) => {
   if (props.nextEvolv.name) {
-    console.log(props);
     const { data, loading } = useFetch(
       `https://pokeapi.co/api/v2/pokemon/${props.nextEvolv.name}`
     );
@@ -68,6 +67,7 @@ const EvolvesToNext = (props) => {
           </div>
         </div>
       );
+      // }
     } else {
       return null;
     }

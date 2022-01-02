@@ -6,7 +6,6 @@ import Loader from "react-loader-spinner";
 
 const Evolution = (props) => {
   if (!props.loading) {
-    console.log(props.data.data);
     let url = props.data.data.evolution_chain.url;
     const { data, loading } = useFetch(url);
     if (!loading) {
@@ -20,7 +19,6 @@ const Evolution = (props) => {
         details2:
           data.data.chain.evolves_to[0]?.evolves_to[0]?.evolution_details[0],
       };
-      console.log(data.data);
       return (
         <div className="Evolution d-flex">
           <div>

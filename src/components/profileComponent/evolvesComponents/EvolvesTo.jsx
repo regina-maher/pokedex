@@ -34,7 +34,9 @@ const EvolvesTo = (props) => {
       ];
       return (
         <div className="EvolvesTo">
-          <EvolvesToNext nextEvolv={props.nextEvolv} />
+          {props.nextEvolv.name !== props.OGName ? (
+            <EvolvesToNext nextEvolv={props.nextEvolv} />
+          ) : null}
           <div className="card mb-2">
             <div className="row">
               <div className="col-6 detail-col">

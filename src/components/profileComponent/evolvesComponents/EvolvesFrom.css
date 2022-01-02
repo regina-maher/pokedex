@@ -9,6 +9,7 @@
   border-radius: 10px;
   border: none;
   margin-right: 15px;
+  margin-top: 14px;
   box-shadow: var(--box-shadow);
 }
 .EvolvesFrom .details {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Search.css";
 import Pokeball from "../../images/pokeball.jpg";
 import PokemonFindings from "./PokemonFindings";
@@ -6,19 +6,23 @@ import axios from "axios";
 
 export default function Search(props) {
   const [loaded, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const search = () => {
-    let apiUrl = ` https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
-    axios.get(apiUrl).then(handleResponse);
-    props.setSearched(true);
+    let apiUrl = `https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
+    axios
+      .get(apiUrl)
+      .then(handleResponse)
+      .catch(function (error) {
+        error.response.data && setError(true);
+      });
   };
   const handleResponse = (response) => {
     props.setResults(response);
+    setError(false);
+    props.setSearched(true);
   };
   const load = () => {
     setLoading(true);
-  };
-  const updateWord = (response) => {
-    props.setKeyword(response.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +32,9 @@ export default function Search(props) {
     props.setResults("");
     props.setSearched(false);
   };
-
+  useEffect(() => {
+    setError(false);
+  }, [props.results]);
   if (loaded) {
     return (
       <div className="Search">
@@ -40,7 +46,7 @@ export default function Search(props) {
           ) : (
             ""
           )}
-          <div className={props.searched ? "hide" : ""}>
+          <div className={props.searched || error ? "hide" : ""}>
             <div className="d-flex justify-content-between">
               <h1 className="title">Pokedex</h1>
               <img
@@ -52,6 +58,22 @@ export default function Search(props) {
             <h2 className="heading text-center">
               All your poke-detail needs in one place
             </h2>
+          </div>
+          <div className={props.search ? "hide" : ""}>
+            <div className={error ? "error-message pt-5 pb-5" : "hide"}>
+              <i class="fas fa-exclamation-triangle"></i>
+              <h2 className="heading text-center">
+                Hmmm... we cannot find your pokemon
+                <br />
+                <br />
+                Check your spelling!
+              </h2>
+              <img
+                src={Pokeball}
+                className="img-fluid pokeball-icon"
+                alt="silhouette icon of a pokeball"
+              />
+            </div>
           </div>
           <div className={props.searched ? "searched" : "searched hide"}>
             <h2 className="heading text-center">LOOK!</h2>
@@ -70,7 +92,7 @@ export default function Search(props) {
                 className="form search-input form-control"
                 placeholder="Search for a Pokemon..."
                 autoFocus={true}
-                onChange={updateWord}
+                onChange={(e) => props.setKeyword(e.target.value)}
               />
             </form>
           </div>
