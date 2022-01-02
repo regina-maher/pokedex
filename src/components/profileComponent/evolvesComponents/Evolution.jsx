@@ -3,7 +3,6 @@ import EvolvesFrom from "./EvolvesFrom";
 import { useFetch } from "../useFetch";
 import EvolvesTo from "./EvolvesTo";
 import Loader from "react-loader-spinner";
-import "./Evolution.css";
 
 const Evolution = (props) => {
   if (!props.loading) {
@@ -24,15 +23,22 @@ const Evolution = (props) => {
       console.log(data.data);
       return (
         <div className="Evolution d-flex">
-          <EvolvesFrom
-            data={props.data.data.evolves_from_species}
-            name={props.data.data.name}
-          />
-          <EvolvesTo
-            nextEvolv={nextEvolv}
-            lastEvolv={lastEvolv}
-            OGName={props.data.data.name}
-          />
+          <div>
+            <h5 className="stat-heading ps-2 pb-2">Evolves from</h5>
+            <EvolvesFrom
+              data={props.data.data.evolves_from_species}
+              name={props.data.data.name}
+            />
+          </div>
+          <div>
+            <h5 className="stat-heading ps-2 pb-2">Evolves to</h5>
+
+            <EvolvesTo
+              nextEvolv={nextEvolv}
+              lastEvolv={lastEvolv}
+              OGName={props.data.data.name}
+            />
+          </div>
         </div>
       );
     } else {

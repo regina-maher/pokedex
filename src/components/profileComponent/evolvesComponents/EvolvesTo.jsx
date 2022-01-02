@@ -34,9 +34,8 @@ const EvolvesTo = (props) => {
       ];
       return (
         <div className="EvolvesTo">
-          <h5 className="stat-heading ps-2 pb-3">Evolves to</h5>
           <EvolvesToNext nextEvolv={props.nextEvolv} />
-          <div className="card">
+          <div className="card mb-2">
             <div className="row">
               <div className="col-6 detail-col">
                 <h5 className="stat-heading">{props.lastEvolv.name}</h5>

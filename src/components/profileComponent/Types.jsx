@@ -18,6 +18,7 @@ const Types = (props) => {
       <div className="Types">
         <div className="row">
           <div className="col-4 titles">
+            <h5 className="stat-heading text-end pe-2">damages</h5>
             <ul className="title-section">
               {typeTitles.map((title, index) => {
                 return (

@@ -31,7 +31,7 @@ const EvolvesToNext = (props) => {
       ];
       return (
         <div className="EvolvesToNext">
-          <div className="card mb-3">
+          <div className="card mt-1 mb-3">
             <div className="row">
               <div className="col-6 detail-col">
                 <h5 className="stat-heading">{props.nextEvolv.name}</h5>

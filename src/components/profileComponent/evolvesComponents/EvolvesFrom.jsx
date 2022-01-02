@@ -30,8 +30,7 @@ const EvolvesFrom = (props) => {
       ];
       return (
         <div className="EvolvesFrom">
-          <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
-          <div className="card">
+          <div className="card ">
             <div className="row">
               <div className="col-6 detail-col">
                 <h5 className="stat-heading">{props.data.name}</h5>
