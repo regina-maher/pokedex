@@ -5,7 +5,7 @@ const Additional = (props) => {
   if (!props.loading) {
     let eggs = props.data.data.egg_groups;
     const eggArr = [];
-    for (const [key, { ...egg }] of Object.entries(eggs)) {
+    for (const { ...egg } of Object.values(eggs)) {
       eggArr.push(`${egg.name} `);
     }
     const addArr = [

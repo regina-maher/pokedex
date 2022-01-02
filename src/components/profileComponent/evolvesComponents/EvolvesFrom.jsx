@@ -10,8 +10,8 @@ const EvolvesFrom = (props) => {
     const typeArry = [];
     if (!loading) {
       const types = data.data.types;
-      for (const [key, { ...type }] of Object.entries(types)) {
-        typeArry.push(type.type.name);
+      for (const { type } of Object.values(types)) {
+        typeArry.push(type.name);
       }
       const [...moves] = data.data.moves;
       const detailArr = [
@@ -75,7 +75,6 @@ const EvolvesFrom = (props) => {
   } else {
     return (
       <div className="EvolvesFrom">
-        <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
         <div className="card no-evolve">
           {props.name} does not evolve from another pokemon
         </div>

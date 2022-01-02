@@ -5,7 +5,7 @@ import "./Items.css";
 const Items = (props) => {
   const [...items] = props.results.held_items;
   const itemsUrlArr = [];
-  for (const [key, { ...name }] of Object.entries(items)) {
+  for (const { ...name } of Object.values(items)) {
     itemsUrlArr.push({ itemHeld: name.item.url });
   }
   if (items.length > 0) {

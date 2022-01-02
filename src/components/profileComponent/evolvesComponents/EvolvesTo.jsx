@@ -14,8 +14,8 @@ const EvolvesTo = (props) => {
     if (!loading) {
       console.log(data.data);
       const types = data.data.types;
-      for (const [key, { ...type }] of Object.entries(types)) {
-        typeArry.push(type.type.name);
+      for (const { type } of Object.values(types)) {
+        typeArry.push(type.name);
       }
       const [...moves] = data.data.moves;
       const detailArr = [

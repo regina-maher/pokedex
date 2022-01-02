@@ -9,11 +9,13 @@ const EvolvesToNext = (props) => {
     );
     const typeArry = [];
     if (!loading) {
-      console.log(data.data);
+      console.log(data.data.types);
       const types = data.data.types;
-      for (const [key, { ...type }] of Object.entries(types)) {
-        typeArry.push(type.type.name);
+      for (const { type } of Object.values(types)) {
+        typeArry.push(type.name);
       }
+
+      console.log(typeArry);
       const [...moves] = data.data.moves;
       const detailArr = [
         {

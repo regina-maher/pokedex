@@ -6,7 +6,6 @@ import { useFetch } from "../profileComponent/useFetch";
 
 export default function DefaultPokeDisplay(props) {
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
-
   const pokeApiArray = [];
   const pokeTypes = [];
   const [pokeDataArray, setPokeDataArray] = useState([]);
@@ -43,16 +42,16 @@ export default function DefaultPokeDisplay(props) {
     const [...bulbasaurTypes] = bulbasaurData.types;
     const [...charmanderTypes] = charmanderData.types;
     const [...squirtleTypes] = squirtleData.types;
-    for (const [key, { ...pika }] of Object.entries(pikachuTypes)) {
+    for (const { ...pika } of Object.values(pikachuTypes)) {
       pokeTypes.push({ pikachu: pika.type.name });
     }
-    for (const [key, { ...bulb }] of Object.entries(bulbasaurTypes)) {
+    for (const { ...bulb } of Object.values(bulbasaurTypes)) {
       pokeTypes.push({ bulbasaur: bulb.type.name });
     }
-    for (const [key, { ...char }] of Object.entries(charmanderTypes)) {
+    for (const { ...char } of Object.values(charmanderTypes)) {
       pokeTypes.push({ charmander: char.type.name });
     }
-    for (const [key, { ...squirt }] of Object.entries(squirtleTypes)) {
+    for (const { ...squirt } of Object.values(squirtleTypes)) {
       pokeTypes.push({ squirtle: squirt.type.name });
     }
     organiseData(
