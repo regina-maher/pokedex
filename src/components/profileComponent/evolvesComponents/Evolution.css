@@ -46,8 +46,9 @@
 }
 .Evolution .PokeDetails .key,
 .Evolution .Triggers .key {
-  width: 70px;
+  width: 90px;
   padding: 0;
+  font-size: 11px;
 }
 .Evolution button.view {
   position: absolute;
