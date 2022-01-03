@@ -51,8 +51,8 @@ export default function Search(props) {
           </div>
           <div className={props.search ? "hide" : ""}>
             <div className={error ? "error-message pt-5 pb-5" : "hide"}>
-              <i class="fas fa-exclamation-triangle"></i>
               <h2 className="heading text-center">
+                <i class="fas fa-exclamation-triangle"></i>
                 Hmmm... we cannot find your pokemon
                 <br />
                 <br />
