@@ -107,14 +107,14 @@ export default function DefaultPokeDisplay(props) {
   if (!props.searched) {
     return (
       <div className="DefaultPokeDisplay">
-        <div className="row pt-3">
+        <div className="row">
           {pokeDataArray.map((poke, index) => {
             return (
               <div key={index} className="col-6">
                 <div
                   id={poke.types.length >= 1 ? poke.types[0] : poke.types}
                   onClick={() => props.setKeyword(poke.name)}
-                  className="d-flex tab justify-content-evenly"
+                  className="d-flex tab justify-content-around"
                 >
                   <div className="body">
                     <h5 className="subheading">{poke.name}</h5>

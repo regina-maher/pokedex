@@ -5,24 +5,10 @@
   box-shadow: var(--box-shadow);
   color: var(--text-colour);
 }
-/* .App .title {
-  font-family: pokemonSolid;
-  color: var(--poke-yellow);
-  -webkit-text-stroke-width: 5px;
-  letter-spacing: 1px;
-  -webkit-text-stroke-color: var(--poke-blue);
-  padding: 1vw;
-  padding-bottom: 0;
-  font-size: 6vw;
-  text-align: center;
-  position: relative;
-  z-index: 3;
-  left: 55px;
-} */
 .App .title {
   padding: 1vw;
   padding-bottom: 0;
-  font-size: 6vw;
+  font-size: 5rem;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -37,7 +23,7 @@
   line-height: 1.5;
   letter-spacing: 0.5;
   padding: 5px 5px 15px;
-  font-size: 1.2vw;
+  font-size: 1rem;
   margin: 0 20px;
 }
 @media (prefers-reduced-motion: no-preference) {

@@ -1,39 +1,35 @@
 .Search .pokeball-icon {
-  width: 20vw;
+  width: 16rem;
   opacity: 0.2;
   position: absolute;
   z-index: 2;
-  left: 49vw;
+  left: 38rem;
   top: 15px;
 }
 .Search .searched .pokeball-icon {
-  width: 14vw;
-  left: 55vw;
+  width: 12rem;
+  left: 42rem;
 }
 .Search .searched .heading {
-  font-size: 1.5vw;
+  font-size: 1.2rem;
   margin: 10px;
 }
 .Search .hide {
   display: none;
-}
-.Search .fa-home {
-  opacity: 0.5;
-  font-size: 1.5vw;
 }
 .Search button {
   border: none;
   background: none;
 }
 .Search form {
-  height: 8.5vh;
-  margin: 2vh 0;
+  height: 3rem;
+  margin: 2rem 0;
   width: 440px;
   position: relative;
   z-index: 5;
 }
 .Search .search-input {
-  padding: 2vh;
+  padding: 1.3rem;
   margin-right: 5px;
   width: 100%;
   text-align: center;
