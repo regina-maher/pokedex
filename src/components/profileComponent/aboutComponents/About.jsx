@@ -14,27 +14,27 @@ export default function About(props) {
   }
   const aboutDets = [
     {
-      title: "pokedex_id",
+      title: "🆔 pokedex_id",
       value: [props.results.id],
     },
     {
-      title: "height",
+      title: "↕️ height",
       value: [props.results.height],
     },
     {
-      title: "weight",
+      title: "↔️ weight",
       value: [props.results.weight],
     },
     {
-      title: "abilities",
+      title: "💪 abilities",
       value: abilityArr,
     },
     {
-      title: "base experience",
+      title: "⭕ base experience",
       value: [props.results.base_experience],
     },
     {
-      title: "moves",
+      title: "👊 moves",
       value: [props.results.moves.length],
     },
   ];

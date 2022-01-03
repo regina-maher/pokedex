@@ -34,11 +34,11 @@ const Additional = (props) => {
         value: props.data.data.habitat.name,
       },
       {
-        title: "has gender difference",
+        title: "♀️♂️ has gender difference",
         value: props.data.data.has_gender_differences ? "Yes" : "No",
       },
       {
-        title: "growth rate",
+        title: "↗️ growth rate",
         value: props.data.data.growth_rate.name,
       },
     ];
