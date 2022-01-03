@@ -11,7 +11,7 @@
 }
 .Evolution .card.no-evolve {
   font-size: 13px;
-  height: 70px;
+  height: 90px;
 }
 .Evolution .stat-heading {
   width: 200px;
@@ -48,4 +48,9 @@
 .Evolution .Triggers .key {
   width: 70px;
   padding: 0;
+}
+.Evolution button.view {
+  position: absolute;
+  right: 10px;
+  top: 0;
 }

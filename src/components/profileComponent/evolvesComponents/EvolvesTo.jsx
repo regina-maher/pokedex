@@ -16,7 +16,7 @@ const EvolvesTo = (props) => {
     );
     const typeArry = [];
     if (!loading) {
-      console.log(data.data);
+      console.log(data);
       const types = data.data.types;
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);
@@ -52,6 +52,7 @@ const EvolvesTo = (props) => {
         <div className="EvolvesTo">
           {props.nextEvolv.name !== props.OGName ? (
             <EvolvesToNext
+              setResults={props.setResults}
               nextEvolv={props.nextEvolv}
               lastEvolv={props.lastEvolv.details1}
             />
@@ -76,6 +77,12 @@ const EvolvesTo = (props) => {
                 />
               </div>
               <div className="col-6 poke-col">
+                <button
+                  onClick={() => props.setResults(data)}
+                  className="btn view"
+                >
+                  view
+                </button>
                 <img
                   className="img-fluid pokemon"
                   alt={props.lastEvolv.name}

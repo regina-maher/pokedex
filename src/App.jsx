@@ -19,7 +19,7 @@ function App() {
       setResults(storageResults);
     }
   }, []);
-
+  console.log(results);
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(results));
   }, [results]);
@@ -34,7 +34,9 @@ function App() {
         <Route
           exact
           path="Profile"
-          element={<Profile results={results.data || ""} />}
+          element={
+            <Profile results={results.data || ""} setResults={setResults} />
+          }
         />
       </Routes>
     </div>

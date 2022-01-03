@@ -68,6 +68,12 @@ const EvolvesToNext = (props) => {
                 </div>
               </div>
               <div className="col-6 poke-col">
+                <button
+                  onClick={() => props.setResults(data)}
+                  className="btn view"
+                >
+                  view
+                </button>
                 <img
                   className="img-fluid pokemon"
                   alt={props.nextEvolv.name}

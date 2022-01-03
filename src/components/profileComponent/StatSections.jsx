@@ -44,7 +44,12 @@ export default function StatSections(props) {
       id: 5,
       title: "evolution",
       content: (
-        <Evolution results={props.results} data={data} loading={loading} />
+        <Evolution
+          setResults={props.setResults}
+          results={props.results}
+          data={data}
+          loading={loading}
+        />
       ),
     },
     {

@@ -51,6 +51,12 @@ const EvolvesFrom = (props) => {
                 </div>
               </div>
               <div className="col-6 poke-col">
+                <button
+                  onClick={() => props.setResults(data)}
+                  className="btn view"
+                >
+                  view
+                </button>
                 <img
                   className="img-fluid pokemon"
                   alt={props.data.name}
@@ -60,7 +66,10 @@ const EvolvesFrom = (props) => {
             </div>
           </div>
           {data.data.name !== props.evolvesFromLast ? (
-            <EvolvesFromLast name={props.evolvesFromLast} />
+            <EvolvesFromLast
+              name={props.evolvesFromLast}
+              setResults={props.setResults}
+            />
           ) : (
             ""
           )}
