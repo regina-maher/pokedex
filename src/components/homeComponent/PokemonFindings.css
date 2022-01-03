@@ -24,7 +24,7 @@
 .PokemonFindings .poke-details {
   justify-content: space-evenly;
   position: relative;
-  bottom: 10rem;
+  bottom: 9rem;
 }
 .PokemonFindings .poke-type {
   border-radius: 30px;
