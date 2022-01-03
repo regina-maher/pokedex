@@ -45,7 +45,7 @@
 }
 .Search .fa-search {
   font-size: 2rem;
-  padding-top: 1.5rem;
+  padding-top: 1.1rem;
   padding-left: 20px;
   color: var(--primary-grey);
 }
@@ -54,6 +54,9 @@
     left: 51rem;
   }
   .Search .fa-search {
-    padding-top: 1.5rem;
+    padding-top: 1.1rem;
+  }
+  .Search .searched .pokeball-icon {
+    left: 55rem;
   }
 }
