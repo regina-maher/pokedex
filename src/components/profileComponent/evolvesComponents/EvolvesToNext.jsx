@@ -13,8 +13,6 @@ const EvolvesToNext = (props) => {
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);
       }
-
-      console.log(typeArry);
       const [...moves] = data.data.moves;
       const detailArr = [
         {
@@ -67,7 +65,6 @@ const EvolvesToNext = (props) => {
           </div>
         </div>
       );
-      // }
     } else {
       return null;
     }

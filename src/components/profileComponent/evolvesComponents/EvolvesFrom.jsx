@@ -2,6 +2,7 @@ import React from "react";
 import { useFetch } from "../useFetch";
 import "./EvolvesFrom.css";
 import Loader from "react-loader-spinner";
+import EvolvesFromLast from "./EvolvesFromLast";
 
 const EvolvesFrom = (props) => {
   if (props.data) {
@@ -13,6 +14,7 @@ const EvolvesFrom = (props) => {
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);
       }
+      console.log(data.data.name);
       const [...moves] = data.data.moves;
       const detailArr = [
         {
@@ -63,6 +65,11 @@ const EvolvesFrom = (props) => {
               </div>
             </div>
           </div>
+          {data.data.name !== props.evolvesFromLast ? (
+            <EvolvesFromLast name={props.evolvesFromLast} />
+          ) : (
+            ""
+          )}
         </div>
       );
     } else {

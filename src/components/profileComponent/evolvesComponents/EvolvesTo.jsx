@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "../useFetch";
 import "./EvolvesTo.css";
-import Loader from "react-loader-spinner";
 import EvolvesToNext from "./EvolvesToNext";
 
 const EvolvesTo = (props) => {
+  const [triggers, setTriggers] = useState(false);
   if (props.lastEvolv.name) {
     console.log(props);
     const { data, loading } = useFetch(
@@ -50,7 +50,8 @@ const EvolvesTo = (props) => {
                     );
                   })}
                 </div>
-                <div className="row">
+
+                <div className={triggers ? "hide" : "row"}>
                   {detailArr.map((detail, index) => {
                     return (
                       <div className="d-flex" key={index}>
@@ -78,7 +79,6 @@ const EvolvesTo = (props) => {
   } else {
     return (
       <div className="EvolvesTo">
-        <h5 className="stat-heading ps-2 pb-3">Evolves from</h5>
         <div className="card no-evolve">
           {props.OGName} does not evolve to another pokemon
         </div>

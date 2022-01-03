@@ -3,15 +3,7 @@
   padding-right: 10px;
   max-height: 120px;
 }
-.EvolvesFrom .card {
-  padding: 15px;
-  width: 220px;
-  border-radius: 10px;
-  border: none;
-  margin-right: 15px;
-  margin-top: 14px;
-  box-shadow: var(--box-shadow);
-}
+
 .EvolvesFrom .details {
   font-size: 12px;
 }
@@ -21,9 +13,7 @@
 .EvolvesFrom .col-6.poke-col {
   padding-left: 0;
 }
-.EvolvesFrom .no-evolve {
-  font-size: 13px;
-}
+
 .EvolvesFrom .details-type,
 .EvolvesFrom .details {
   font-size: 12px;
@@ -33,4 +23,12 @@
   color: white;
   border-radius: 30px;
   margin: 5px 0 5px 2px;
+}
+.EvolvesFrom {
+  max-height: 200px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+.EvolvesFrom .card {
+  margin: 12px 5px;
 }

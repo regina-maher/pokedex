@@ -3,13 +3,13 @@ import EvolvesFrom from "./EvolvesFrom";
 import { useFetch } from "../useFetch";
 import EvolvesTo from "./EvolvesTo";
 import Loader from "react-loader-spinner";
+import "./Evolution.css";
 
 const Evolution = (props) => {
   if (!props.loading) {
     let url = props.data.data.evolution_chain.url;
     const { data, loading } = useFetch(url);
     if (!loading) {
-      console.log(data.data.chain);
       const nextEvolv = {
         name: data.data.chain.evolves_to[0]?.species?.name,
       };
@@ -19,23 +19,31 @@ const Evolution = (props) => {
         details2:
           data.data.chain.evolves_to[0]?.evolves_to[0]?.evolution_details[0],
       };
+      const evolvesFromLast = data.data.chain.species.name;
+      const currentPokemon = props.data.data.name;
       return (
         <div className="Evolution d-flex">
           <div>
-            <h5 className="stat-heading ps-2 pb-2">Evolves from</h5>
+            <h5 className="stat-heading ps-2">Evolves from</h5>
             <EvolvesFrom
               data={props.data.data.evolves_from_species}
-              name={props.data.data.name}
+              name={currentPokemon}
+              evolvesFromLast={evolvesFromLast}
             />
           </div>
           <div>
             <h5 className="stat-heading ps-2 pb-2">Evolves to</h5>
-
-            <EvolvesTo
-              nextEvolv={nextEvolv}
-              lastEvolv={lastEvolv}
-              OGName={props.data.data.name}
-            />
+            {currentPokemon !== lastEvolv.name ? (
+              <EvolvesTo
+                nextEvolv={nextEvolv}
+                lastEvolv={lastEvolv}
+                OGName={currentPokemon}
+              />
+            ) : (
+              <div className="card no-evolve">
+                {currentPokemon} does not evolve to another pokemon
+              </div>
+            )}
           </div>
         </div>
       );
