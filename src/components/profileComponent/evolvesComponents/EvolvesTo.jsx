@@ -8,9 +8,11 @@ import Triggers from "./Triggers";
 
 const EvolvesTo = (props) => {
   const [activeTab, setActiveTab] = useState(1);
-  if (props.lastEvolv.name) {
+  if (props.nextEvolv.name) {
     const { data, loading } = useFetch(
-      `https://pokeapi.co/api/v2/pokemon/${props.lastEvolv.name}`
+      `https://pokeapi.co/api/v2/pokemon/${
+        props.lastEvolv.name ? props.lastEvolv.name : props.nextEvolv.name
+      }`
     );
     const typeArry = [];
     if (!loading) {
@@ -54,7 +56,7 @@ const EvolvesTo = (props) => {
               lastEvolv={props.lastEvolv.details1}
             />
           ) : null}
-          <div className="card mb-2">
+          <div className={props.lastEvolv.name ? "card mb-2" : "hide"}>
             <div className="row">
               <div className="col-6 detail-col">
                 <h5 className="stat-heading">{props.lastEvolv.name}</h5>

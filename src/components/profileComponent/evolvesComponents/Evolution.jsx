@@ -21,6 +21,7 @@ const Evolution = (props) => {
       };
       const evolvesFromLast = data.data.chain.species.name;
       const currentPokemon = props.data.data.name;
+      console.log(nextEvolv);
       return (
         <div className="Evolution d-flex">
           <div>
@@ -54,6 +55,8 @@ const Evolution = (props) => {
         </div>
       );
     }
+  } else {
+    return null;
   }
 };
 

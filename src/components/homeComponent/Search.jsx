@@ -29,11 +29,6 @@ export default function Search(props) {
     event.preventDefault();
     search();
   };
-  const resetHome = () => {
-    props.setResults("");
-    props.setSearched(false);
-  };
-
   useEffect(() => {
     setError(false);
   }, [props.results]);
@@ -41,7 +36,6 @@ export default function Search(props) {
     return (
       <div className="Search">
         <div className="container-fluid">
-          {props.searched ? <button onClick={resetHome}>🏠</button> : ""}
           <div className={props.searched || error ? "hide" : ""}>
             <div className="d-flex justify-content-between">
               <h1 className="title">Pokedex</h1>
