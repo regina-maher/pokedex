@@ -5,7 +5,7 @@
   height: 15px;
 }
 .NavHeading .stat-heading {
-  padding: 10px 10px;
+  padding: 10px;
   color: var(--text-colour);
 }
 
@@ -16,4 +16,7 @@
   border: none;
   padding: 10px 20px;
   background-color: var(--light-grey);
+}
+.NavHeading hr {
+  margin-bottom: 20px;
 }

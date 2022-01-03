@@ -16,8 +16,8 @@ export default function StatSections(props) {
   const [activeTab, setActiveTab] = useState(1);
   const typeArry = [];
   const types = props.results.types;
-  for (const [key, { ...type }] of Object.entries(types)) {
-    typeArry.push({ name: type.type.name, url: type.type.url });
+  for (const { type } of Object.values(types)) {
+    typeArry.push({ name: type.name, url: type.url });
   }
   const tabContent = [
     {

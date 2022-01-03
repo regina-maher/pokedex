@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import NavHeading from "../NavHeading";
 import { useFetch } from "../useFetch";
 import "./EvolvesTo.css";
 import EvolvesToNext from "./EvolvesToNext";
 import PokeDetails from "./PokeDetails";
+import Triggers from "./Triggers";
 
 const EvolvesTo = (props) => {
-  const [triggers, setTriggers] = useState(false);
+  const [activeTab, setActiveTab] = useState(1);
   if (props.lastEvolv.name) {
-    console.log(props);
     const { data, loading } = useFetch(
       `https://pokeapi.co/api/v2/pokemon/${props.lastEvolv.name}`
     );
@@ -33,10 +34,25 @@ const EvolvesTo = (props) => {
           value: moves.length,
         },
       ];
+      const tabContent = [
+        {
+          id: 1,
+          title: "details",
+          content: <PokeDetails detailArr={detailArr} />,
+        },
+        {
+          id: 2,
+          title: "triggers",
+          content: <Triggers lastEvolv={props.lastEvolv.details2} />,
+        },
+      ];
       return (
         <div className="EvolvesTo">
           {props.nextEvolv.name !== props.OGName ? (
-            <EvolvesToNext nextEvolv={props.nextEvolv} />
+            <EvolvesToNext
+              nextEvolv={props.nextEvolv}
+              lastEvolv={props.lastEvolv.details1}
+            />
           ) : null}
           <div className="card mb-2">
             <div className="row">
@@ -51,10 +67,11 @@ const EvolvesTo = (props) => {
                     );
                   })}
                 </div>
-
-                <div className={triggers ? "hide" : "row"}>
-                  <PokeDetails detailArr={detailArr} />
-                </div>
+                <NavHeading
+                  tabContent={tabContent}
+                  active={activeTab}
+                  setActive={setActiveTab}
+                />
               </div>
               <div className="col-6 poke-col">
                 <img
@@ -63,6 +80,7 @@ const EvolvesTo = (props) => {
                   src={data.data.sprites.other.dream_world.front_default}
                 />
               </div>
+              {tabContent[activeTab - 1].content}
             </div>
           </div>
         </div>

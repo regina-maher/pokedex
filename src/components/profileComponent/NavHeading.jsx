@@ -22,7 +22,7 @@ function NavHeading(props) {
             );
           })}
         </ul>
-        <hr className="mb-4" />
+        <hr />
       </nav>
     </div>
   );

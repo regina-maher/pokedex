@@ -4,7 +4,7 @@
   border-radius: 10px;
   border: none;
   box-shadow: var(--box-shadow);
-  height: 180px;
+  height: 200px;
 }
 .Evolution .card.no-evolve {
   font-size: 13px;
@@ -15,4 +15,30 @@
 }
 .Evolution .hide {
   display: none;
+}
+.Evolution .NavHeading ul.nav-list {
+  text-decoration: none;
+  padding-left: 0;
+  display: inline-flex;
+  height: 1px;
+}
+.Evolution .NavHeading .stat-heading {
+  padding: 15px 0 0;
+  color: var(--text-colour);
+  width: 55px;
+  font-size: 12px;
+  text-transform: lowercase;
+  background-color: white;
+}
+.Evolution .NavHeading nav {
+  width: 120px;
+}
+.Evolution .NavHeading hr {
+  margin: 5px;
+  margin-left: 0;
+}
+.Evolution .PokeDetails,
+.Evolution .Triggers {
+  width: 120px;
+  padding: 0;
 }

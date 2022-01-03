@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "../useFetch";
 import PokeDetails from "./PokeDetails";
+import Triggers from "./Triggers";
+import NavHeading from "../NavHeading";
 
 const EvolvesToNext = (props) => {
+  const [activeTab, setActiveTab] = useState(1);
+
   if (props.nextEvolv.name) {
     const { data, loading } = useFetch(
       `https://pokeapi.co/api/v2/pokemon/${props.nextEvolv.name}`
     );
     const typeArry = [];
     if (!loading) {
-      console.log(data.data.types);
       const types = data.data.types;
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);
@@ -29,6 +32,18 @@ const EvolvesToNext = (props) => {
           value: moves.length,
         },
       ];
+      const tabContent = [
+        {
+          id: 1,
+          title: "details",
+          content: <PokeDetails detailArr={detailArr} />,
+        },
+        {
+          id: 2,
+          title: "triggers",
+          content: <Triggers lastEvolv={props.lastEvolv} />,
+        },
+      ];
       return (
         <div className="EvolvesToNext">
           <div className="card mt-1 mb-3">
@@ -45,7 +60,11 @@ const EvolvesToNext = (props) => {
                   })}
                 </div>
                 <div className="row">
-                  <PokeDetails detailArr={detailArr} />
+                  <NavHeading
+                    tabContent={tabContent}
+                    active={activeTab}
+                    setActive={setActiveTab}
+                  />
                 </div>
               </div>
               <div className="col-6 poke-col">
@@ -55,6 +74,7 @@ const EvolvesToNext = (props) => {
                   src={data.data.sprites.other.dream_world.front_default}
                 />
               </div>
+              {tabContent[activeTab - 1].content}
             </div>
           </div>
         </div>
