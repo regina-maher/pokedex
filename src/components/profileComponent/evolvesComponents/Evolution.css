@@ -39,6 +39,10 @@
 }
 .Evolution .PokeDetails,
 .Evolution .Triggers {
-  width: 120px;
+  padding: 0;
+}
+.Evolution .PokeDetails .key,
+.Evolution .Triggers .key {
+  width: 60px;
   padding: 0;
 }
