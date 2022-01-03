@@ -9,10 +9,10 @@
 }
 .PokemonFindings .pokeball {
   position: relative;
-  left: 4.5vw;
-  bottom: 1vw;
+  left: 1rem;
+  bottom: 1rem;
   z-index: -1;
-  width: 140px;
+  width: 250px;
   opacity: 0.2;
 }
 
@@ -24,7 +24,7 @@
 .PokemonFindings .poke-details {
   justify-content: space-evenly;
   position: relative;
-  bottom: 15vh;
+  bottom: 9rem;
 }
 .PokemonFindings .poke-type {
   border-radius: 30px;
