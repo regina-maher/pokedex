@@ -54,3 +54,7 @@
   right: 10px;
   top: 0;
 }
+.Evolution .loading {
+  display: flex;
+  align-items: center;
+}
