@@ -44,8 +44,8 @@
   position: absolute;
 }
 .Search .fa-search {
-  font-size: 2vw;
-  padding-top: 2.5vh;
+  font-size: 2rem;
+  padding-top: 1.8rem;
   padding-left: 20px;
   color: var(--primary-grey);
 }
