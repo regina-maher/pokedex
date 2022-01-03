@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFetch } from "../useFetch";
 import "./EvolvesTo.css";
 import EvolvesToNext from "./EvolvesToNext";
+import PokeDetails from "./PokeDetails";
 
 const EvolvesTo = (props) => {
   const [triggers, setTriggers] = useState(false);
@@ -52,14 +53,7 @@ const EvolvesTo = (props) => {
                 </div>
 
                 <div className={triggers ? "hide" : "row"}>
-                  {detailArr.map((detail, index) => {
-                    return (
-                      <div className="d-flex" key={index}>
-                        <div className="details col-8">{detail.title}: </div>
-                        <div className="details col-4">{detail.value}</div>
-                      </div>
-                    );
-                  })}
+                  <PokeDetails detailArr={detailArr} />
                 </div>
               </div>
               <div className="col-6 poke-col">

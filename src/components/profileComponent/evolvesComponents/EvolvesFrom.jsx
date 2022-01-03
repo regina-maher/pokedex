@@ -3,6 +3,7 @@ import { useFetch } from "../useFetch";
 import "./EvolvesFrom.css";
 import Loader from "react-loader-spinner";
 import EvolvesFromLast from "./EvolvesFromLast";
+import PokeDetails from "./PokeDetails";
 
 const EvolvesFrom = (props) => {
   if (props.data) {
@@ -46,14 +47,7 @@ const EvolvesFrom = (props) => {
                   })}
                 </div>
                 <div className="row">
-                  {detailArr.map((detail, index) => {
-                    return (
-                      <div className="d-flex" key={index}>
-                        <div className="details col-8">{detail.title}: </div>
-                        <div className="details col-4">{detail.value}</div>
-                      </div>
-                    );
-                  })}
+                  <PokeDetails detailArr={detailArr} />
                 </div>
               </div>
               <div className="col-6 poke-col">

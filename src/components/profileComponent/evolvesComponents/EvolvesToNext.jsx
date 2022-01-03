@@ -1,5 +1,6 @@
 import React from "react";
 import { useFetch } from "../useFetch";
+import PokeDetails from "./PokeDetails";
 
 const EvolvesToNext = (props) => {
   if (props.nextEvolv.name) {
@@ -44,14 +45,7 @@ const EvolvesToNext = (props) => {
                   })}
                 </div>
                 <div className="row">
-                  {detailArr.map((detail, index) => {
-                    return (
-                      <div className="d-flex" key={index}>
-                        <div className="details col-8">{detail.title}: </div>
-                        <div className="details col-4">{detail.value}</div>
-                      </div>
-                    );
-                  })}
+                  <PokeDetails detailArr={detailArr} />
                 </div>
               </div>
               <div className="col-6 poke-col">

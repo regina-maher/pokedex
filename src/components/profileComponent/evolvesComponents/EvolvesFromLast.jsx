@@ -1,6 +1,7 @@
 import React from "react";
 import { useFetch } from "../useFetch";
 import Loader from "react-loader-spinner";
+import PokeDetails from "./PokeDetails";
 
 const EvolvesFromLast = (props) => {
   let url = `https://pokeapi.co/api/v2/pokemon/${props.name}`;
@@ -42,14 +43,7 @@ const EvolvesFromLast = (props) => {
                 })}
               </div>
               <div className="row">
-                {detailArr.map((detail, index) => {
-                  return (
-                    <div className="d-flex" key={index}>
-                      <div className="details col-8">{detail.title}: </div>
-                      <div className="details col-4">{detail.value}</div>
-                    </div>
-                  );
-                })}
+                <PokeDetails detailArr={detailArr} />
               </div>
             </div>
             <div className="col-6 poke-col">

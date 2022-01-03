@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Search(props) {
   const [loaded, setLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
   const [error, setError] = useState(false);
   const search = () => {
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
@@ -32,6 +33,7 @@ export default function Search(props) {
     props.setResults("");
     props.setSearched(false);
   };
+
   useEffect(() => {
     setError(false);
   }, [props.results]);
@@ -39,13 +41,7 @@ export default function Search(props) {
     return (
       <div className="Search">
         <div className="container-fluid">
-          {props.searched ? (
-            <button onClick={resetHome}>
-              <i className="fas fa-arrow-left" />
-            </button>
-          ) : (
-            ""
-          )}
+          {props.searched ? <button onClick={resetHome}>🏠</button> : ""}
           <div className={props.searched || error ? "hide" : ""}>
             <div className="d-flex justify-content-between">
               <h1 className="title">Pokedex</h1>

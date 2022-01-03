@@ -12,7 +12,7 @@ export default function Profile(props) {
       <div className="Profile" id={mainType}>
         <section className="intro-banner">
           <Link to="/" className="home-link">
-            <i className="fas fa-home" />
+            🏠
           </Link>
           <div className="type-summary row">
             <div className="col-5">
