@@ -5,7 +5,7 @@
   border-radius: 6px;
   position: relative;
   z-index: 1;
-  height: 340px;
+  height: 320px;
 }
 .PokemonFindings .pokeball {
   position: relative;
@@ -60,4 +60,9 @@
   font-weight: 700;
   width: 100px;
   text-transform: uppercase;
+}
+@media (min-width: 1300px) {
+  .PokemonFindings .poke-details {
+    bottom: 14rem;
+  }
 }

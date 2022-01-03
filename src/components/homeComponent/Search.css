@@ -49,3 +49,11 @@
   padding-left: 20px;
   color: var(--primary-grey);
 }
+@media (min-width: 1300px) {
+  .Search .pokeball-icon {
+    left: 51rem;
+  }
+  .Search .fa-search {
+    padding-top: 1.5rem;
+  }
+}

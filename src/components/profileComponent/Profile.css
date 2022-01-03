@@ -52,3 +52,9 @@
   position: relative;
   z-index: 2;
 }
+@media (min-width: 1300px) {
+  .Profile img.pokeball {
+    top: 20px;
+    right: 37rem;
+  }
+}
