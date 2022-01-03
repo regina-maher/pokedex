@@ -8,7 +8,11 @@ import Triggers from "./Triggers";
 
 const EvolvesTo = (props) => {
   const [activeTab, setActiveTab] = useState(1);
-  if (props.nextEvolv.name) {
+  if (
+    (props.nextEvolv.name != props.OGName) |
+    ((props.lastEvolv.name != props.nextEvolv.name) &
+      (props.lastEvolv.name != undefined))
+  ) {
     const { data, loading } = useFetch(
       `https://pokeapi.co/api/v2/pokemon/${
         props.lastEvolv.name ? props.lastEvolv.name : props.nextEvolv.name
@@ -16,7 +20,6 @@ const EvolvesTo = (props) => {
     );
     const typeArry = [];
     if (!loading) {
-      console.log(data);
       const types = data.data.types;
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);

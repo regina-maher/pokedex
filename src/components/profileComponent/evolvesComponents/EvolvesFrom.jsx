@@ -15,7 +15,6 @@ const EvolvesFrom = (props) => {
       for (const { type } of Object.values(types)) {
         typeArry.push(type.name);
       }
-      console.log(data.data.name);
       const [...moves] = data.data.moves;
       const detailArr = [
         {

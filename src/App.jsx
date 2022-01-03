@@ -19,7 +19,6 @@ function App() {
       setResults(storageResults);
     }
   }, []);
-  console.log(results);
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(results));
   }, [results]);
