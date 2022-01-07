@@ -10,16 +10,18 @@ const Evolution = (props) => {
     let url = props.data.data.evolution_chain.url;
     const { data, loading } = useFetch(url);
     if (!loading) {
+      const { chain } = data.data;
+      const { evolves_to } = chain;
       const nextEvolv = {
-        name: data.data.chain.evolves_to[0]?.species?.name,
+        name: evolves_to[0]?.species?.name,
       };
       const lastEvolv = {
-        name: data.data.chain.evolves_to[0]?.evolves_to[0]?.species.name,
-        details1: data.data.chain.evolves_to[0]?.evolution_details[0],
-        details2:
-          data.data.chain.evolves_to[0]?.evolves_to[0]?.evolution_details[0],
+        name: evolves_to[0]?.evolves_to[0]?.species.name,
+        details1: evolves_to[0]?.evolution_details[0],
+        details2: evolves_to[0]?.evolves_to[0]?.evolution_details[0],
       };
-      const evolvesFromLast = data.data.chain.species.name;
+      const { name } = chain.species;
+      const evolvesFromLast = name;
       const currentPokemon = props.data.data.name;
       return (
         <div className="Evolution d-flex">
