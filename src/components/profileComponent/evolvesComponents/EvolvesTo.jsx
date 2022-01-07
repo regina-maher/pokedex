@@ -25,20 +25,24 @@ const EvolvesTo = (props) => {
         typeArry.push(type.name);
       }
       const [...moves] = data.data.moves;
-      const detailArr = [
-        {
-          title: "weight",
-          value: data.data.weight,
-        },
-        {
-          title: "height",
-          value: data.data.height,
-        },
-        {
-          title: "moves",
-          value: moves.length,
-        },
-      ];
+      const detailArr = [];
+      const createDetailArr = ({ weight, height }) => {
+        return detailArr.push(
+          {
+            title: "weight",
+            value: weight,
+          },
+          {
+            title: "height",
+            value: height,
+          },
+          {
+            title: "moves",
+            value: moves.length,
+          }
+        );
+      };
+      createDetailArr(data.data);
       const tabContent = [
         {
           id: 1,
