@@ -6,7 +6,7 @@ const PokeDetails = (props) => {
       {props.detailArr.map((detail, index) => {
         return (
           <div className="d-flex" key={index}>
-            <div className="details key col-8">{detail.title}: </div>
+            <div className="details key col-8">{detail.title}</div>
             <div className="details value col-4">{detail.value}</div>
           </div>
         );

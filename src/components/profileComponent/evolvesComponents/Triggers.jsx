@@ -12,9 +12,13 @@ const Triggers = (props) => {
         {summay.map((detail, index) => {
           return (
             <div className="d-flex" key={index}>
-              <div className="details key col-7">{detail[0]}: </div>
+              <div className="details key col-7">
+                {detail[0].replace("_", " ")}
+              </div>
               <div className="details value col-5">
-                {detail[1].name != undefined ? detail[1].name : detail[1]}
+                {detail[1].name != undefined
+                  ? detail[1].name.replace("-", " ")
+                  : detail[1]}
               </div>
             </div>
           );
