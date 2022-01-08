@@ -17,7 +17,6 @@ const Triggers = (props) => {
     return (
       <div className="Triggers">
         {summay.map((detail, index) => {
-          console.log(detail[0], detail[1]);
           return (
             <div className="d-flex" key={index}>
               <div className="details key col-7">
