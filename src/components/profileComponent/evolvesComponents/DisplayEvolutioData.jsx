@@ -13,6 +13,8 @@ const DisplayEvolutioData = (props) => {
   }
   const [...moves] = props.data.data.moves;
   const detailArr = [];
+  const { front_default } = props.data.data.sprites.other.dream_world;
+  const { name } = props.data.data;
   const createDetailArr = ({ weight, height }) => {
     return detailArr.push(
       {
@@ -39,11 +41,9 @@ const DisplayEvolutioData = (props) => {
     {
       id: 2,
       title: "triggers",
-      content: <Triggers lastEvolv={props.lastEvolv} />,
+      content: <Triggers lastEvolv={props.lastEvolv} name={name} />,
     },
   ];
-  const { name } = props.data.data;
-  const { front_default } = props.data.data.sprites.other.dream_world;
   return (
     <div className="DisplayEvolutioData">
       <div className="card ">
