@@ -13,6 +13,7 @@ const EvolvesFromLast = (props) => {
           data={data}
           name={props.name}
           setResults={props.setResults}
+          evolvesTo={false}
         />
       </div>
     );

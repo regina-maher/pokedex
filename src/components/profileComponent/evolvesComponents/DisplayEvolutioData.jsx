@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import PokeDetails from "./PokeDetails";
+import Triggers from "./Triggers";
+import NavHeading from "../NavHeading";
 
 const DisplayEvolutioData = (props) => {
+  const [activeTab, setActiveTab] = useState(1);
+
   const typeArry = [];
   const { types } = props.data.data;
   for (const { type } of Object.values(types)) {
@@ -25,14 +29,29 @@ const DisplayEvolutioData = (props) => {
       }
     );
   };
-  const { front_default } = props.data.data.sprites.other.dream_world;
   createDetailArr(props.data.data);
+  const tabContent = [
+    {
+      id: 1,
+      title: "details",
+      content: <PokeDetails detailArr={detailArr} />,
+    },
+    {
+      id: 2,
+      title: "triggers",
+      content: <Triggers lastEvolv={props.lastEvolv} />,
+    },
+  ];
+  const { name } = props.data.data;
+  const { front_default } = props.data.data.sprites.other.dream_world;
   return (
     <div className="DisplayEvolutioData">
       <div className="card ">
         <div className="row">
           <div className="col-6 detail-col">
-            <h5 className="stat-heading">{props.name}</h5>
+            <h5 className="stat-heading">
+              {props.evolvesTo ? name : props.name}
+            </h5>
             <div className="d-flex justify-content-around">
               {typeArry.map((type, index) => {
                 return (
@@ -43,7 +62,15 @@ const DisplayEvolutioData = (props) => {
               })}
             </div>
             <div className="row">
-              <PokeDetails detailArr={detailArr} />
+              {props.evolvesTo ? (
+                <NavHeading
+                  tabContent={tabContent}
+                  active={activeTab}
+                  setActive={setActiveTab}
+                />
+              ) : (
+                <PokeDetails detailArr={detailArr} />
+              )}
             </div>
           </div>
           <div className="col-6 poke-col">
@@ -59,6 +86,7 @@ const DisplayEvolutioData = (props) => {
               src={front_default}
             />
           </div>
+          {props.evolvesTo ? tabContent[activeTab - 1].content : ""}
         </div>
       </div>
     </div>
