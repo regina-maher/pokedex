@@ -14,7 +14,7 @@ export default function About(props) {
   }
   const aboutDets = [
     {
-      title: "🆔 pokedex_id",
+      title: "🆔 pokedex id",
       value: [props.results.id],
     },
     {

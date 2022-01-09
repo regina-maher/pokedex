@@ -13,7 +13,7 @@ export default function BaseStats(props) {
           {stats.map((stat, index) => {
             return (
               <div key={index} className="stat-title">
-                {stat.stat.name}
+                {stat.stat.name.replace("-", " ")}
               </div>
             );
           })}
