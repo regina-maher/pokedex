@@ -16,6 +16,36 @@ const Items = (props) => {
           const { data, loading } = useFetch(item.itemHeld);
           if (!loading) {
             const { ...itemData } = data.data;
+            const itemDetails = [];
+            const createItemDetails = ({
+              baby_trigger_for,
+              category,
+              cost,
+              fling_effect,
+              fling_power,
+            }) => {
+              itemDetails.push(
+                { title: "category", value: category.name.replace("-", " ") },
+                {
+                  title: "cost",
+                  value: cost,
+                },
+                {
+                  title: "fling effect",
+                  value: fling_effect || "n/a",
+                },
+                {
+                  title: "fling power",
+                  value: fling_power || "n/a",
+                },
+                {
+                  title: "baby trigger",
+                  value: baby_trigger_for || "no",
+                }
+              );
+            };
+            createItemDetails(itemData);
+            console.log(itemData);
             return (
               <div className="row" key={index}>
                 <div className="col-4">
@@ -28,33 +58,22 @@ const Items = (props) => {
                     <div className="type-details">
                       {itemData.name.replace("-", " ")}
                     </div>
-                    <div className="details">item id: {itemData.id}</div>
+                    <div className="details">ITEM ID: {itemData.id}</div>
                   </div>
                 </div>
-                <div className="col-8 item-details">
+                <div className="col-8">
                   <div className="card berry-dets">
                     <div className="row">
-                      <div className="col-6 item-titles">
-                        <ul>
-                          <li>category:</li>
-                          <li>cost:</li>
-                          <li>fling effect:</li>
-                          <li>fling power:</li>
-                          <li>baby trigger:</li>
-                        </ul>
-                      </div>
-                      <div className="col-6 item-values">
-                        <ul>
-                          <li>{itemData.category.name.replace("-", " ")}</li>
-                          <li>{itemData.cost}</li>
-                          <li>
-                            {itemData.fling_effect?.name.replace("-", " ") ||
-                              "n/a"}
-                          </li>
-                          <li>{itemData.fling_power || "n/a"}</li>
-                          <li>{itemData.baby_trigger_for || "no"}</li>
-                        </ul>
-                      </div>
+                      {itemDetails.map((item, index) => {
+                        return (
+                          <div key={index} className="d-flex item-details">
+                            <div className="col-6 item-title">
+                              {item.title}:
+                            </div>
+                            <div className="col-6 item-value">{item.value}</div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

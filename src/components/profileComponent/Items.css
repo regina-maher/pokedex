@@ -25,22 +25,23 @@
 .Items .card.berry-dets {
   text-align: start;
   padding: 15px;
-  padding-bottom: 0;
   margin-bottom: 15px;
+  font-size: 13px;
+}
+.Items .item-details {
+  padding-bottom: 3px;
+}
+.Items .item-title {
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-size: 12px;
 }
 .Items p {
   font-size: 14px;
   padding: 5px;
 }
-.Items li {
-  padding-bottom: 3px;
-  font-size: 13px;
-}
 .Items .item-description {
   font-size: 12px;
-}
-.Items li strong {
-  padding-right: 10px;
 }
 .Items {
   max-height: 190px;
