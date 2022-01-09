@@ -31,7 +31,7 @@ const Additional = (props) => {
       },
       {
         title: "🌊🍃habitat",
-        value: props.data.data.habitat.name,
+        value: props.data.data.habitat.name.replace("-", " "),
       },
       {
         title: "♀️♂️ has gender difference",
