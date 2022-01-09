@@ -27,7 +27,7 @@ export default function About(props) {
     },
     {
       title: "💪 abilities",
-      value: abilityArr,
+      value: abilityArr.join(", "),
     },
     {
       title: "⭕ base experience",

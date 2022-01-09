@@ -25,7 +25,9 @@ const Items = (props) => {
                       className="img-fluid item"
                       alt={itemData.name}
                     />
-                    <div className="type-details">{itemData.name}</div>
+                    <div className="type-details">
+                      {itemData.name.replace("-", " ")}
+                    </div>
                     <div className="details">item id: {itemData.id}</div>
                   </div>
                 </div>
@@ -43,9 +45,12 @@ const Items = (props) => {
                       </div>
                       <div className="col-6 item-values">
                         <ul>
-                          <li>{itemData.category.name}</li>
+                          <li>{itemData.category.name.replace("-", " ")}</li>
                           <li>{itemData.cost}</li>
-                          <li>{itemData.fling_effect?.name || "n/a"}</li>
+                          <li>
+                            {itemData.fling_effect?.name.replace("-", " ") ||
+                              "n/a"}
+                          </li>
                           <li>{itemData.fling_power || "n/a"}</li>
                           <li>{itemData.baby_trigger_for || "no"}</li>
                         </ul>

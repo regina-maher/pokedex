@@ -15,7 +15,7 @@ const Additional = (props) => {
       },
       {
         title: "🥚 eggs",
-        value: eggArr,
+        value: eggArr.join(", "),
       },
       {
         title: "🐣 is baby",
