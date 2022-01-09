@@ -9,8 +9,8 @@ export default function About(props) {
   const { data, loading } = useFetch(url);
   const [...ability] = props.results.abilities;
   const abilityArr = [];
-  for (const [key, { ...name }] of Object.entries(ability)) {
-    abilityArr.push(`${name.ability.name} `);
+  for (const { ...name } of Object.values(ability)) {
+    abilityArr.push(name.ability.name);
   }
   const aboutDets = [
     {
