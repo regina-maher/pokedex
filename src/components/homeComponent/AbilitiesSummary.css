@@ -1,8 +1,9 @@
 .AbilitiesSummary .listed-ability {
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.2);
-  padding: 5px 10px;
+  padding: 7px 10px;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin-bottom: 8px;
+  font-weight: 500;
 }

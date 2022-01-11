@@ -34,7 +34,7 @@ export default function PokemonFindings(props) {
             <PokePictures />
           </div>
         </div>
-        <div className="poke-details d-flex justify-content-start">
+        <div className="poke-details pt-3 d-flex justify-content-start">
           {types.map((type, index) => {
             return (
               <div key={index} id={type.type.name} className="poke-type">
