@@ -24,13 +24,11 @@
 }
 .Items .card.berry-dets {
   text-align: start;
-  padding: 15px;
+  padding: 10px 20px;
   margin-bottom: 15px;
   font-size: 13px;
 }
-.Items .item-details {
-  padding-bottom: 3px;
-}
+
 .Items .item-title {
   text-transform: uppercase;
   opacity: 0.7;

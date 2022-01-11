@@ -12,7 +12,7 @@ const Items = (props) => {
   }
   if (items.length > 0) {
     return (
-      <div className="Items pe-4 ps-4">
+      <div className="Items container-fluid pe-4 ps-4">
         <h5 className="stat-heading pb-2">items held</h5>
         {itemsUrlArr.map((item, index) => {
           const { data, loading } = useFetch(item.itemHeld);
@@ -34,7 +34,7 @@ const Items = (props) => {
                 },
                 {
                   title: "fling effect",
-                  value: fling_effect || "n/a",
+                  value: fling_effect || fling_effect.name || "n/a",
                 },
                 {
                   title: "fling power",
@@ -50,10 +50,6 @@ const Items = (props) => {
             console.log(itemDetails);
             return (
               <div className="row" key={index}>
-                <hr />
-                <div className="item-description pb-3">
-                  {itemData.effect_entries[0].effect || "no description"}
-                </div>
                 <div className="col-4">
                   <div className="card berry">
                     <img
@@ -68,7 +64,7 @@ const Items = (props) => {
                   </div>
                 </div>
                 <div className="col-8">
-                  <div className="card berry-dets">
+                  <div className="card berry-dets ">
                     <div className="row">
                       {itemDetails.map((item, index) => {
                         console.log(item);
@@ -78,7 +74,7 @@ const Items = (props) => {
                               {item.title}:
                             </div>
                             <div className="col-6 item-value">
-                              {/* {item.value.name} */}
+                              {item.value.name || item.value}
                             </div>
                           </div>
                         );
@@ -86,6 +82,10 @@ const Items = (props) => {
                     </div>
                   </div>
                 </div>
+                <div className="item-description pb-3">
+                  {itemData.effect_entries[0].effect || "no description"}
+                </div>
+                <hr />
               </div>
             );
           }
