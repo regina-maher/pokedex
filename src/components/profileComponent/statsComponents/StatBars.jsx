@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ProgressBar from "./ProgressBar";
 
 function StatBars(props) {
   const [skillBar, setSkillBar] = useState([]);
+
   let styles = [];
   function createBars() {
     for (let i = 0; i < props.stats.length; i++) {

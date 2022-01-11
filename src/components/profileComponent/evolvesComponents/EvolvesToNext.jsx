@@ -13,7 +13,6 @@ const EvolvesToNext = (props) => {
           <DisplayEvolutioData
             data={data}
             name={props.name}
-            setResults={props.setResults}
             evolvesTo={true}
             lastEvolv={props.lastEvolv}
           />

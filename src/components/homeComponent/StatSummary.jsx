@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./StatSummary.css";
+import { ResultsContext } from "../../ResultsContext";
 
-export default function StatSummary(props) {
-  if (props.results) {
-    const weight = props.results.data.weight;
-    const height = props.results.data.height;
-    const [...moves] = props.results.data.moves;
+export default function StatSummary() {
+  const { results } = useContext(ResultsContext);
 
+  if (results) {
+    const weight = results.data.weight;
+    const height = results.data.height;
+    const [...moves] = results.data.moves;
     return (
       <div className="StatSummary">
         <div className="row pe-3">

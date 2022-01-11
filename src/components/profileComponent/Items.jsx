@@ -1,9 +1,11 @@
 import { useFetch } from "./useFetch";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Items.css";
+import { ResultsContext } from "../../ResultsContext";
 
 const Items = (props) => {
-  const [...items] = props.results.held_items;
+  const { results } = useContext(ResultsContext);
+  const [...items] = results.data.held_items;
   const itemsUrlArr = [];
   for (const { ...name } of Object.values(items)) {
     itemsUrlArr.push({ itemHeld: name.item.url });
@@ -45,9 +47,13 @@ const Items = (props) => {
               );
             };
             createItemDetails(itemData);
-            console.log(itemData);
+            console.log(itemDetails);
             return (
               <div className="row" key={index}>
+                <hr />
+                <div className="item-description pb-3">
+                  {itemData.effect_entries[0].effect || "no description"}
+                </div>
                 <div className="col-4">
                   <div className="card berry">
                     <img
@@ -65,22 +71,21 @@ const Items = (props) => {
                   <div className="card berry-dets">
                     <div className="row">
                       {itemDetails.map((item, index) => {
+                        console.log(item);
                         return (
                           <div key={index} className="d-flex item-details">
                             <div className="col-6 item-title">
                               {item.title}:
                             </div>
-                            <div className="col-6 item-value">{item.value}</div>
+                            <div className="col-6 item-value">
+                              {/* {item.value.name} */}
+                            </div>
                           </div>
                         );
                       })}
                     </div>
                   </div>
                 </div>
-                <div className="item-description pb-3">
-                  {itemData.effect_entries[0].effect || "no description"}
-                </div>
-                <hr />
               </div>
             );
           }
@@ -91,7 +96,7 @@ const Items = (props) => {
     return (
       <div className="Items">
         <h5 className="stat-heading pt-4">items held</h5>
-        <p>- {props.results.name} does not hold any items</p>
+        <p>- {results.data.name} does not hold any items</p>
       </div>
     );
   }

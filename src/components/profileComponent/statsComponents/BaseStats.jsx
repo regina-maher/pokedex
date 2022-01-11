@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./BaseStats.css";
 import StatBars from "./StatBars";
+import { ResultsContext } from "../../../ResultsContext";
 
 export default function BaseStats(props) {
-  const [...stats] = props.results.stats;
+  const { results } = useContext(ResultsContext);
+  const [...stats] = results.data.stats;
 
   return (
     <div className="BaseStats">
@@ -39,7 +41,7 @@ export default function BaseStats(props) {
           })}
         </div>
         <div className="col-6">
-          <StatBars id={props.id} results={props.results} stats={stats} />
+          <StatBars id={props.id} stats={stats} />
         </div>
       </div>
     </div>

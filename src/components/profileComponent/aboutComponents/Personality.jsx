@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFetch } from "../useFetch";
+import { ResultsContext } from "../../../ResultsContext";
 
 const Personality = (props) => {
-  let url = props.results.species.url;
+  const { results } = useContext(ResultsContext);
+  let url = results.data.species.url;
   const { data, loading } = useFetch(url);
   if (!loading) {
     let personalityDets = [

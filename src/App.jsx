@@ -2,16 +2,12 @@ import "./App.css";
 import Home from "./components/homeComponent/Home";
 import Profile from "./components/profileComponent/Profile";
 import { Routes, Route } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { ResultsContext } from "./ResultsContext";
 
 function App() {
   const [results, setResults] = useState("");
-  // const [results, setResults] = useState(() =>
-  //   JSON.parse(localStorage.getItem("results"))
-  // );
-  // useEffect(() => {
-  //   localStorage.setItem("results", JSON.stringify(results));
-  // }, [results]);
+  const value = useMemo(() => ({ results, setResults }), [results, setResults]);
   const LOCAL_STORAGE_KEY = "results";
   useEffect(() => {
     const storageResults = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -24,20 +20,12 @@ function App() {
   }, [results]);
   return (
     <div className="App">
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={<Home results={results || ""} setResults={setResults} />}
-        />
-        <Route
-          exact
-          path="Profile"
-          element={
-            <Profile results={results.data || ""} setResults={setResults} />
-          }
-        />
-      </Routes>
+      <ResultsContext.Provider value={value}>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="Profile" element={<Profile />} />
+        </Routes>
+      </ResultsContext.Provider>
     </div>
   );
 }

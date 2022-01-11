@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PokeDetails from "./PokeDetails";
 import Triggers from "./Triggers";
 import NavHeading from "../NavHeading";
+import { ResultsContext } from "../../../ResultsContext";
 
 const DisplayEvolutioData = (props) => {
+  const { setResults } = useContext(ResultsContext);
+
   const [activeTab, setActiveTab] = useState(1);
 
   const typeArry = [];
@@ -74,10 +77,7 @@ const DisplayEvolutioData = (props) => {
             </div>
           </div>
           <div className="col-6 poke-col">
-            <button
-              onClick={() => props.setResults(props.data)}
-              className="btn view"
-            >
+            <button onClick={() => setResults(props.data)} className="btn view">
               view
             </button>
             <img

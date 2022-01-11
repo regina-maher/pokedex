@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Search.css";
 import Pokeball from "../../images/pokeball.jpg";
 import PokemonFindings from "./PokemonFindings";
 import axios from "axios";
+import { ResultsContext } from "../../ResultsContext";
 
 export default function Search(props) {
+  const { results, setResults } = useContext(ResultsContext);
   const [loaded, setLoading] = useState(false);
-  const [refresh, setRefresh] = useState(false);
   const [error, setError] = useState(false);
   const search = () => {
     let apiUrl = `https://pokeapi.co/api/v2/pokemon/${props.keyword}`;
@@ -18,7 +19,7 @@ export default function Search(props) {
       });
   };
   const handleResponse = (response) => {
-    props.setResults(response);
+    setResults(response);
     setError(false);
     props.setSearched(true);
   };
@@ -31,7 +32,8 @@ export default function Search(props) {
   };
   useEffect(() => {
     setError(false);
-  }, [props.results]);
+  }, [results]);
+
   if (loaded) {
     return (
       <div className="Search">
@@ -86,7 +88,7 @@ export default function Search(props) {
               />
             </form>
           </div>
-          {props.searched ? <PokemonFindings results={props.results} /> : ""}
+          {props.searched ? <PokemonFindings /> : ""}
         </div>
       </div>
     );

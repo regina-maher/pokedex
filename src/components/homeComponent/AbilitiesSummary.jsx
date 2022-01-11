@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./AbilitiesSummary.css";
+import { ResultsContext } from "../../ResultsContext";
 
-export default function AbilitiesSummary(props) {
-  if (props.results) {
-    const [...abilities] = props.results.data.abilities;
+export default function AbilitiesSummary() {
+  const { results } = useContext(ResultsContext);
+
+  if (results) {
+    const [...abilities] = results.data.abilities;
     return (
       <div className="AbilitiesSummary">
         <ul>

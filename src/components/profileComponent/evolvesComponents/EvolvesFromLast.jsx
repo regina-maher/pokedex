@@ -9,12 +9,7 @@ const EvolvesFromLast = (props) => {
   if (!loading) {
     return (
       <div className="EvolvesFromLast">
-        <DisplayEvolutioData
-          data={data}
-          name={props.name}
-          setResults={props.setResults}
-          evolvesTo={false}
-        />
+        <DisplayEvolutioData data={data} name={props.name} evolvesTo={false} />
       </div>
     );
   } else {

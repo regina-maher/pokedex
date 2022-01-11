@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import "./DefaultPokeDisplay.css";
 import pokeball from "../../images/pokeball.jpg";
 import { useFetch } from "../profileComponent/useFetch";
+import { ResultsContext } from "../../ResultsContext";
 
 export default function DefaultPokeDisplay(props) {
+  const { setResults } = useContext(ResultsContext);
+
   const pokeKeys = ["pikachu", "bulbasaur", "charmander", "squirtle"];
   const pokeApiArray = [];
   const pokeTypes = [];
@@ -98,7 +101,7 @@ export default function DefaultPokeDisplay(props) {
   }
   const { data, loading } = useFetch(url);
   if (!loading) {
-    props.setResults(data);
+    setResults(data);
     props.setSearched(true);
   }
   useEffect(() => {

@@ -28,7 +28,6 @@ const Evolution = (props) => {
           <div>
             <h5 className="stat-heading ps-2">Evolves from</h5>
             <EvolvesFrom
-              setResults={props.setResults}
               data={props.data.data.evolves_from_species}
               name={currentPokemon}
               evolvesFromLast={evolvesFromLast}
@@ -38,7 +37,6 @@ const Evolution = (props) => {
             <h5 className="stat-heading ps-3 pb-2">Evolves to</h5>
             {currentPokemon !== lastEvolv.name ? (
               <EvolvesTo
-                setResults={props.setResults}
                 nextEvolv={nextEvolv}
                 lastEvolv={lastEvolv}
                 OGName={currentPokemon}

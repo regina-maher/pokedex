@@ -15,14 +15,10 @@ const EvolvesFrom = (props) => {
           <DisplayEvolutioData
             data={data}
             name={props.name}
-            setResults={props.setResults}
             evolvesTo={false}
           />
           {data.data.name !== props.evolvesFromLast ? (
-            <EvolvesFromLast
-              name={props.evolvesFromLast}
-              setResults={props.setResults}
-            />
+            <EvolvesFromLast name={props.evolvesFromLast} />
           ) : (
             ""
           )}

@@ -1,7 +1,9 @@
-import React from "react";
-import { useFetch } from "../useFetch";
+import React, { useContext } from "react";
+// import { ResultsContext } from "../../../ResultsContext";
 
 const Additional = (props) => {
+  // const { results } = useContext(ResultsContext);
+
   if (!props.loading) {
     let eggs = props.data.data.egg_groups;
     const eggArr = [];

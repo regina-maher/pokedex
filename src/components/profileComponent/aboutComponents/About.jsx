@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./About.css";
 import Additional from "./Additional";
 import Personality from "./Personality";
 import { useFetch } from "../useFetch";
+import { ResultsContext } from "../../../ResultsContext";
 
-export default function About(props) {
-  let url = props.results.species.url;
+export default function About() {
+  const { results } = useContext(ResultsContext);
+  let url = results.data.species.url;
   const { data, loading } = useFetch(url);
-  const [...ability] = props.results.abilities;
+  const [...ability] = results.data.abilities;
   const abilityArr = [];
   for (const { ...name } of Object.values(ability)) {
     abilityArr.push(name.ability.name);
@@ -15,15 +17,15 @@ export default function About(props) {
   const aboutDets = [
     {
       title: "🆔 pokedex id",
-      value: [props.results.id],
+      value: [results.data.id],
     },
     {
       title: "↕️ height",
-      value: [props.results.height],
+      value: [results.data.height],
     },
     {
       title: "↔️ weight",
-      value: [props.results.weight],
+      value: [results.data.weight],
     },
     {
       title: "💪 abilities",
@@ -31,11 +33,11 @@ export default function About(props) {
     },
     {
       title: "⭕ base experience",
-      value: [props.results.base_experience],
+      value: [results.data.base_experience],
     },
     {
       title: "👊 moves",
-      value: [props.results.moves.length],
+      value: [results.data.moves.length],
     },
   ];
   return (
@@ -56,10 +58,10 @@ export default function About(props) {
         </div>
       </div>
       <div className="pt-3 pb-3 basic-details">
-        <Personality results={props.results} />
+        <Personality />
       </div>
       <div className="basic-details">
-        <Additional results={props.results} data={data} loading={loading} />
+        <Additional data={data} loading={loading} />
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Profile.css";
 import pokeball from "../../images/pokeball.jpg";
 import StatSections from "./StatSections";
+import { ResultsContext } from "../../ResultsContext";
 
-export default function Profile(props) {
-  if (props.results !== "") {
-    const [...types] = props.results.types;
+export default function Profile() {
+  const { results } = useContext(ResultsContext);
+  if (results !== "") {
+    const [...types] = results.data.types;
     const mainType = types[0].type.name;
     return (
       <div className="Profile" id={mainType}>
@@ -16,7 +18,7 @@ export default function Profile(props) {
           </Link>
           <div className="type-summary row">
             <div className="col-5">
-              <h2 className="subheading pe-4">{props.results.forms[0].name}</h2>
+              <h2 className="subheading pe-4">{results.data.forms[0].name}</h2>
               <ul className="d-flex justify-content-evenly">
                 {types.map((type, index) => {
                   return (
@@ -29,8 +31,8 @@ export default function Profile(props) {
             </div>
             <div className="col-7">
               <img
-                src={props.results.sprites.other.dream_world.front_default}
-                alt={props.results.forms[0].name}
+                src={results.data.sprites.other.dream_world.front_default}
+                alt={results.data.forms[0].name}
                 className="img-fluid pokemon"
               />
               <img
@@ -42,11 +44,7 @@ export default function Profile(props) {
           </div>
         </section>
         <section className="poke-stats">
-          <StatSections
-            results={props.results}
-            id={mainType}
-            setResults={props.setResults}
-          />
+          <StatSections id={mainType} />
         </section>
       </div>
     );

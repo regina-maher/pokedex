@@ -3,7 +3,7 @@ import Search from "./Search";
 import DefaultPokeDisplay from "./DefaultPokeDisplay";
 import "./Home.css";
 
-export default function Home(props) {
+export default function Home() {
   const [searched, setSearched] = useState(false);
   const [keyword, setKeyword] = useState("");
 
@@ -12,15 +12,12 @@ export default function Home(props) {
       <Search
         searched={searched}
         setSearched={setSearched}
-        results={props.results}
-        setResults={props.setResults}
         keyword={keyword}
         setKeyword={setKeyword}
       />
       <DefaultPokeDisplay
         searched={searched}
         setSearched={setSearched}
-        setResults={props.setResults}
         keyword={keyword}
         setKeyword={setKeyword}
       />

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Moves.css";
 import { useFetch } from "./useFetch";
+import { ResultsContext } from "../../ResultsContext";
 
 const Moves = (props) => {
-  const [...moves] = props.results.moves;
+  const { results } = useContext(ResultsContext);
+  const [...moves] = results.data.moves;
   return (
     <div className="Moves">
       <div className="row ps-1">
