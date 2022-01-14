@@ -58,3 +58,10 @@
     left: 55rem;
   }
 }
+@media (max-width: 415px) {
+  .Search .pokeball-icon {
+    width: 60vw;
+    left: 55vw;
+    top: 30px;
+  }
+}

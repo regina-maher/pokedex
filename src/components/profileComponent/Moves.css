@@ -31,7 +31,7 @@
   padding-bottom: 10px;
 }
 .Moves {
-  max-height: 250px;
+  height: 250px;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
@@ -39,4 +39,9 @@
   max-height: 70px;
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+@media (max-width: 415px) {
+  .Moves {
+    height: 450px;
+  }
 }

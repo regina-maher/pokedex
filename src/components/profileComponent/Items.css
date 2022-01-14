@@ -42,7 +42,12 @@
   font-size: 12px;
 }
 .Items {
-  max-height: 190px;
+  height: 190px;
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+@media (max-width: 415px) {
+  .Items {
+    height: 450px;
+  }
 }

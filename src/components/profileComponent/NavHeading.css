@@ -20,3 +20,8 @@
 .NavHeading hr {
   margin-bottom: 20px;
 }
+@media (max-width: 415px) {
+  .NavHeading .stat-heading {
+    font-size: 15px;
+  }
+}

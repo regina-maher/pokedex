@@ -9,3 +9,8 @@
 .StatSections .btn {
   padding: 0;
 }
+@media (max-width: 415px) {
+  .StatSections .stat-heading {
+    font-size: 18px;
+  }
+}

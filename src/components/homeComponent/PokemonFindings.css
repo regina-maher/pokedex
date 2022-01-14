@@ -66,3 +66,12 @@
     bottom: 14rem;
   }
 }
+@media (max-width: 415px) {
+  .PokemonFindings {
+    height: 400px;
+  }
+  .PokemonFindings .poke-details {
+    position: relative;
+    bottom: 12rem;
+  }
+}

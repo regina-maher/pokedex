@@ -19,7 +19,7 @@
   margin: 5px 0 5px 2px;
 }
 .EvolvesTo {
-  max-height: 200px;
+  height: 200px;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
@@ -33,4 +33,9 @@
   margin: 7px 0 10px;
   color: var(--text-colour);
   padding-bottom: 2px;
+}
+@media (max-width: 415px) {
+  .EvolvesTo {
+    height: 450px;
+  }
 }

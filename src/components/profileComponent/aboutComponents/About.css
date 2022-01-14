@@ -18,7 +18,7 @@
 }
 .About {
   padding: 5px 40px;
-  max-height: 220px;
+  height: 220px;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
@@ -27,4 +27,20 @@
   padding: 15px;
   border-radius: 6px;
   margin-bottom: 15px;
+}
+@media (max-width: 415px) {
+  .About {
+    height: 450px;
+  }
+  .About .stat-title {
+    font-size: 14px;
+    padding: 3px;
+  }
+  .About .stat-value {
+    font-size: 14px;
+    padding: 3px;
+  }
+  .About .item-details {
+    font-size: 14px;
+  }
 }

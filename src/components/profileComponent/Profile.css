@@ -58,3 +58,20 @@
     right: 37rem;
   }
 }
+@media (max-width: 415px) {
+  .Profile img.pokeball {
+    top: 30px;
+    right: -20vw;
+    width: 300px;
+  }
+  .Profile img.pokemon {
+    height: 280px;
+  }
+  .Profile .subheading {
+    font-size: 10vw;
+  }
+  .Profile .listed-ability {
+    padding: 15px 30px;
+    font-size: 6vw;
+  }
+}
